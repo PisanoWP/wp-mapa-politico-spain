@@ -1,0 +1,6 @@
+.buildpath
+
+node_modules/*
+.settings/*
+
+.project
