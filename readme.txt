@@ -1,10 +1,9 @@
 ===  WP Mapa Politico España ===
 Contributors: jcglp
-Donate link: http://www.hughlashbrooke.com/donate
 Tags: wordpress, plugin, map, image, spain
 Requires at least: 3.9
-Tested up to: 4.3
-Stable tag: 4.3
+Tested up to: 4.4
+Stable tag: 4.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
