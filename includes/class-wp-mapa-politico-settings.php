@@ -277,9 +277,23 @@ class WP_Mapa_Politico_Settings {
 		
 		} else if ($tab=='mapa') {
 			
-		
+			if (isset($_POST['Submit'])) {
+							
+				$wpmps_mapas =  get_option( 'wpmps_plugin_mapas' );
+				
+				foreach ($_POST as $key => $valor){
+				
+					$v = explode( '-', $key);
+				
+					if (isset($wpmps_mapas[$v[0]][$v[1]][$v[2]][$v[3]])){
+				
+						$wpmps_mapas[$v[0]][$v[1]][$v[2]][$v[3]] = $valor;
+				
+					}
+				
+				}
+				update_option( 'wpmps_plugin_mapas', $wpmps_mapas );
 			
-			if ( isset( $_GET['settings-updated'] ) ) {
 				echo '<div id="setting-error-settings_updated" class="updated settings-error notice is-dismissible">'
 						.'<p>'. __( 'Datos guardados correctamente' , 'wpmps-plugin' ) .'</p>'
 						.'<button type="button" class="notice-dismiss"><span class="screen-reader-text">Descartar este aviso.</span></button>'
@@ -287,7 +301,8 @@ class WP_Mapa_Politico_Settings {
 			}
 				
 			// Formulario para capturar la informacion del mapa y guararlo como una única opcion
-			$bnn_action = '../wp-content/plugins/'.plugin_basename( __DIR__ ).'/lib/grabar_coordenadas.php';
+			// $bnn_action = '../wp-content/plugins/'.plugin_basename( __DIR__ ).'/lib/grabar_coordenadas.php';
+			$bnn_action = "";
 			$html .= '<form method="post" action="'.$bnn_action.'" enctype="multipart/form-data">' . "\n";
 			
 			
