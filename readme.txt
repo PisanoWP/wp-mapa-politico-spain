@@ -47,6 +47,9 @@ Si tienes dudas, preguntas o te da errores ponte en contacto conmigo, estaré en
 
 == Changelog ==
 
+= 2.0.2 =
+* Fichero de idiomas actualizado
+
 = 2.0.1 =
 * Corrige el error 404 al grabar opciones
 
