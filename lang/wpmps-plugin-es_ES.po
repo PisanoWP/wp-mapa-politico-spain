@@ -1,0 +1,94 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-04-21 21:23+0200\n"
+"PO-Revision-Date: 2016-04-21 21:43+0100\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"X-Generator: Eazy Po 0.9.5.3\n"
+
+msgid ""
+"Bienvenido al WP Mapa Politico España, plugin WordPress que te\n"
+"\t\t\t\t\t\t\t\t\t\t\tpermitirá mostrar un mapa politico de España con areas "
+"seleccionables."
+msgstr ""
+"Bienvenido al WP Mapa Politico España, plugin WordPress que te\n"
+"\t\t\t\t\t\t\t\t\t\t\tpermitirá mostrar un mapa politico de España con areas "
+"seleccionables."
+
+msgid "Borrar imagen"
+msgstr "Borrar imagen"
+
+msgid "Cheatin&#8217; huh?"
+msgstr "Cheatin&#8217; huh?"
+
+msgid "Color del fondo del mapa"
+msgstr "Color del fondo del mapa"
+
+msgid "Configuración"
+msgstr "Configuración"
+
+msgid "Configuración aspectos del plugins."
+msgstr "Configuración aspectos del plugins."
+
+msgid "Datos guardados correctamente"
+msgstr "Datos guardados correctamente"
+
+msgid ""
+"Define los enlaces para cada una de las provincias. # es un enlace vacío, a "
+"usar sino se quiere definir enlace."
+msgstr ""
+"Define los enlaces para cada una de las provincias. # es un enlace vacío, a "
+"usar sino se quiere definir enlace."
+
+msgid "Enlaces Asociados a Provincias"
+msgstr "Enlaces Asociados a Provincias"
+
+msgid "Guardar cambios"
+msgstr "Guardar cambios"
+
+msgid "Href"
+msgstr "Href"
+
+msgid "Inicio"
+msgstr "Inicio"
+
+msgid "Mapa"
+msgstr "Mapa"
+
+msgid "Seleccione el color del fondo del mapa."
+msgstr "Seleccione el color del fondo del mapa."
+
+msgid "Subir nueva imagen"
+msgstr "Subir nueva imagen"
+
+msgid "Subir una imagen"
+msgstr "Subir una imagen"
+
+msgid "Target"
+msgstr "Target"
+
+msgid "Title"
+msgstr "Title"
+
+msgid "Usar imagen"
+msgstr "Usar imagen"
+
+msgid "WP Mapa Politico"
+msgstr "WP Mapa Politico"
+
+msgid "WP Mapa Politico España"
+msgstr "WP Mapa Politico España"
+
+msgid "Zona"
+msgstr "Zona"

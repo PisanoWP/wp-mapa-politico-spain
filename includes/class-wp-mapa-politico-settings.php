@@ -306,6 +306,7 @@ class WP_Mapa_Politico_Settings {
 			$html .= '<form method="post" action="'.$bnn_action.'" enctype="multipart/form-data">' . "\n";
 			
 			
+			
 			// Get settings fields
 			ob_start();
 			settings_fields( $this->parent->_token . '_settings' );
@@ -361,6 +362,9 @@ class WP_Mapa_Politico_Settings {
 			if ( ! isset( $wp_settings_fields ) || !isset( $wp_settings_fields[$page] ) || !isset( $wp_settings_fields[$page][$section['id']] ) )
 				continue;
 			
+			
+			echo '<input name="Submit" type="submit" class="button-primary" value="' . esc_attr( __( 'Guardar cambios' , 'wpmps-plugin' ) ) . '" />' . "\n";
+			
 			echo '<table class="form-table">';
 			$this->do_settings_fields_wpms( $page, $section['id'] );
 			echo '</table>';
@@ -374,6 +378,8 @@ class WP_Mapa_Politico_Settings {
 		if ( ! isset( $wp_settings_fields[$page][$section] ) )
 			return;
 	
+		
+		
 		foreach ( (array) $wp_settings_fields[$page][$section] as $field ) {
 			$class = '';
 	
@@ -381,6 +387,7 @@ class WP_Mapa_Politico_Settings {
 				$class = ' class="' . esc_attr( $field['args']['class'] ) . '"';
 			}
 	
+			
 			echo "<tr{$class}>";
 	
 			if ( ! empty( $field['args']['label_for'] ) ) {

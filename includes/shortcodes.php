@@ -63,7 +63,7 @@
 										.' id ="prv-'.$cod_area.'"'
 										.' class="provincia" '
 										.' coords="'.implode(",", $value['area']).'"'
-										.' href="'.$value['href'].'"'
+										.' href="'.esc_url($value['href']).'"'
 										.' alt="'.$value['alt'].'"'
 										.' title="'.$value['title'].'"'
 										.' target="'.$value['target'].'"'

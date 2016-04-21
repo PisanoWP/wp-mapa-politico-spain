@@ -189,12 +189,14 @@ class WP_Mapa_Politico {
 	 * @return  void
 	 */
 	public function load_plugin_textdomain () {
-	    $domain = 'wordpress-plugin-template';
+	    $domain = 'wpmps-plugin';
 
 	    $locale = apply_filters( 'plugin_locale', get_locale(), $domain );
 
-	    load_textdomain( $domain, WP_LANG_DIR . '/' . $domain . '/' . $domain . '-' . $locale . '.mo' );
+	    load_textdomain( $domain, WP_LANG_DIR . '/' . $domain . '/' . $domain . '-' . $locale . '.mo' );   
+	    
 	    load_plugin_textdomain( $domain, false, dirname( plugin_basename( $this->file ) ) . '/lang/' );
+	    
 	} // End load_plugin_textdomain ()
 
 	/**
