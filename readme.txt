@@ -2,8 +2,8 @@
 Contributors: jcglp
 Tags: wordpress, plugin, map, image, spain
 Requires at least: 3.9
-Tested up to: 4.4
-Stable tag: 4.4
+Tested up to: 4.7
+Stable tag: 4.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -12,7 +12,7 @@ Inserta una imagen de un mapa político de España, con áreas definidas sobre l
 
 == Description ==
 
-Este plugin permite insertar un mapa político de España en post o páginas. 
+Este plugin permite insertar un mapa político de España en post o páginas.
 
 En la página del plugin se pueden definir los titles e hipervínculos de cada una de las provincias.
 
@@ -30,7 +30,7 @@ O bien, desde el panel de control de wordpress
 1. Ir a la sección Plugin
 2. Haz click en el enlace Añadir nuevo
 3. En el buscador, escribe "Mapa Politico", y ¡¡ ahi estará !!.
-4. Haz click en instalar 
+4. Haz click en instalar
 
 
 == Frequently Asked Questions ==
@@ -47,6 +47,10 @@ Si tienes dudas, preguntas o te da errores ponte en contacto conmigo, estaré en
 
 == Changelog ==
 
+= 2.0.3 =
+* Correción enlances internos
+* Validación en WP 4.7
+
 = 2.0.2 =
 * Fichero de idiomas actualizado
 
@@ -54,7 +58,7 @@ Si tienes dudas, preguntas o te da errores ponte en contacto conmigo, estaré en
 * Corrige el error 404 al grabar opciones
 
 = 2.0.0 =
-* Cambio estructural del plugin. 
+* Cambio estructural del plugin.
 * Optimización para adaptarse a diferentes temas.
 * Minificación de ficheros.
 
@@ -109,8 +113,6 @@ Si tienes dudas, preguntas o te da errores ponte en contacto conmigo, estaré en
 
 = 2.0.0 =
 * 01-12-2015
-* Cambio estructural del plugin. 
+* Cambio estructural del plugin.
 * Optimización para adaptarse a diferentes temas.
 * Minificación de ficheros.
-
-

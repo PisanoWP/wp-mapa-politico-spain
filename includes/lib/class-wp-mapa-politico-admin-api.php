@@ -168,29 +168,29 @@ class WP_Mapa_Politico_Admin_API {
 			    </div>
 			    <?php
 			break;
-			
+
 			case 'inicio':
 				// Información del plugin
 				?>
-				
+
 				<div>
-					<ol>
-						<li> Pulsa <a href="/wordpress/wp-admin/options-general.php?page=wpmps&tab=mapa">aquí</a> para empezar a definir los enlaces de cada una de las provincias.</li>
-						<li> ¿Quieres cambiar el color del fondo ? pulsa <a href="/wordpress/wp-admin/options-general.php?page=wpmps&tab=configuracion">aquí.</a></li>
-						<li> Utiliza el shortcode <strong>[wpmps-map]</strong> en los post o páginas donde mostrar el mapa político.</li> 
-						
+					<ol>						
+						<li> Pulsa <a href="<?php echo get_admin_url(); ?>options-general.php?page=wpmps_settings&tab=mapa">aquí</a> para empezar a definir los enlaces de cada una de las provincias.</li>
+						<li> ¿Quieres cambiar el color del fondo ? pulsa <a href="<?php echo get_admin_url(); ?>options-general.php?page=wpmps_settings&tab=configuracion">aquí.</a></li>
+						<li> Utiliza el shortcode <strong>[wpmps-map]</strong> en los post o páginas donde mostrar el mapa político.</li>
+
 					</ol>
 					<ul>
-						<li> <strong>AVISO VERSIONES ANTERIORES:</strong> Las versiones anteriores del plugin usaban el shortcode <strong>[wp-political-map-spain]</strong>.<br> 
-						Este shortcode esta obsoleto y dejará de funcionar en futuras versiones. </li> 
+						<li> <strong>AVISO VERSIONES ANTERIORES:</strong> Las versiones anteriores del plugin usaban el shortcode <strong>[wp-political-map-spain]</strong>.<br>
+						Este shortcode esta obsoleto y dejará de funcionar en futuras versiones. </li>
 					</ul>
 				</div>
 				<br />
-				
+
                 <h3>Valora el plugin <span class="cinco-estrellas"></span></h3>
 				<p> ¿Te gusta el plugin? ¿lo estas usando en tu página?, pues puedes valorar el plugin
-				 en <a href="http://wordpress.org/support/view/plugin-reviews/wp-mapa-politico-spain?filter=5" target="_blank">WordPress.org</a> , 
-				            
+				 en <a href="http://wordpress.org/support/view/plugin-reviews/wp-mapa-politico-spain?filter=5" target="_blank">WordPress.org</a> ,
+
 				 que te estaría muy agradecido :-)</p>
 				<br />
 
@@ -200,29 +200,29 @@ class WP_Mapa_Politico_Admin_API {
 					<li><a target="_blank" href="https://mispinitoswp.wordpress.com/faq/">Preguntas frecuentes.</a></li>
 					<li><a target="_blank" href="https://mispinitoswp.wordpress.com/contacto/">Sugerir mejoras</a></li>
 					<li><a target="_blank" href="https://wordpress.org/support/plugin/wp-mapa-politico-spain">Informar de un Bug</a></li>
-					
-					
+
+
 				</ul>
-				
-				
-				
-				<?php 
-				
+
+
+
+				<?php
+
 			break;
-			
+
 			case 'mapa':
-				
+
 				$id_mapa = $data; // Default map. España
-				
+
 				//$opciones = WP_Mapa_Politico_Coordenadas::get_coordenadas(0);
 				$opciones =	get_option( 'wpmps_plugin_mapas' );
-				
-				
+
+
 				$mapa = $opciones[$id_mapa];
-				
+
 				?>
 				<h3><?php  _e ('Enlaces Asociados a Provincias', 'wpmps-plugin'); ?></h3>
-               	
+
                 <input name="id-mapa" type="hidden" value=<?php echo $id_mapa; ?> >
                 <table>
                 	<tr>
@@ -230,35 +230,35 @@ class WP_Mapa_Politico_Admin_API {
                 		<th><?php _e ('Href', 'wpmps-plugin' ); ?></th>
                 		<th><?php _e ('Title', 'wpmps-plugin' ); ?></th>
                 		<th><?php _e ('Target', 'wpmps-plugin' ); ?></th>
-                		
-                	</tr>    
-                    
+
+                	</tr>
+
                     <?php foreach ($mapa['areas'] as $key => $zona) { ?>
-                    
+
                     <?php //	echo '<pre>'; echo $key; print_r($zona); echo '</pre>'; die; ?>
                     <tr>
                     	<td><?php echo $zona["desc_area"];?></td>
-                    	
+
                     	<td><input style="width:300px;" type="text" name="<?php echo $id_mapa.'-areas-'.$key."-href"; ?>" value="<?php echo $zona["href"];?>"></td>
-                    	
+
                     	<td><input type="text" name="<?php echo $id_mapa.'-areas-'.$key."-title"?>" value="<?php  echo $zona["title"];?>"></td>
-                    	                    	
+
 						<td><select name="<?php echo $id_mapa.'-areas-'.$key."-target"?>" >
 							<option <?php if ( $zona["target"]=='_blank') echo 'selected'; ?> value="_blank">Nueva Ventana</option>
 							<option <?php if ( $zona["target"]=='_self') echo 'selected'; ?> value="_self">Misma Ventana</option>
 						</select>
                     	</td>
-                    	<?php 
+                    	<?php
                     		/* Comentado la caja que muestra las coordenadas del area
-                    		 * <td><input type="text" name="<?php echo $wpim["id"]."-coordenadas"?>" value="<?php echo $wpim["coordenadas"];?>"></td> 
-                    		 * 
+                    		 * <td><input type="text" name="<?php echo $wpim["id"]."-coordenadas"?>" value="<?php echo $wpim["coordenadas"];?>"></td>
+                    		 *
                     		 */?>
-                    	
+
                     </tr>
                     <?php }  ?>
-                    	
+
 				</table>
-				<?php 
+				<?php
 			break;
 
 		}
