@@ -1,9 +1,10 @@
 ===  WP Mapa Politico España ===
 Contributors: jcglp
-Tags: wordpress, plugin, map, image, spain
+Tags: wordpress, plugin, map, image, spain, svg
+Donate link: https://www.paypal.me/jcglp
 Requires at least: 3.9
-Tested up to: 4.7
-Stable tag: 4.7
+Tested up to: 4.9
+Stable tag: 3.1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -35,8 +36,26 @@ O bien, desde el panel de control de wordpress
 
 == Frequently Asked Questions ==
 
+= ¿Puedo tener más de un mapa diferente?
+
+Pues no, el plugin solo acepta un mapa. Eso si donde pongas el shortcode saldrá una mapa.
+
+= ¿Existe una versión del Plugin con las comunidades autónomas?
+
+Pues tampoco,  es posible que un futuro no muy lejano lo incluya pero no en estos momentos
+
+= He actualizado y no muestra el mapa, solo el shortcode [wp-political-map-spain]
+
+Desde la versión 2.0.0 el shortcode estaba obsoleto, y es a partir de la 3.0.0 cuando deja de existir.
+Sustituye por el nuevo shortode  [wpmps-map] y listo.
+
+
+= ¿Existe una versión Premium del plugin?
+
+Pues no, lo que se ve es lo que hay, pero vamos si quieres me puedes invitar a un café desde el botón de donación.
 
 Si tienes dudas, preguntas o te da errores ponte en contacto conmigo, estaré encantado de ayudarte jcglp@yahoo.es
+
 
 
 == Screenshots ==
@@ -46,6 +65,25 @@ Si tienes dudas, preguntas o te da errores ponte en contacto conmigo, estaré en
 
 
 == Changelog ==
+
+= 3.1.1 =
+* Fichero de Internationalization
+* Tested 4.9
+
+= 3.1.0 =
+* Compatiblidad con navegadores Safari
+
+= 3.0.2 =
+* Cambio carga imagen  para evitar linea "gris"
+* Eliminacion shortcode antiguo [wp-political-map-spain]
+
+= 3.0.1 =
+* Valores por defecto en las opciones del plugin para nuevas instalaciones
+
+= 3.0.0 =
+* Cambio a imagenes SVG
+* Selección color de fondo de la provincia
+* Selección color provincia activada
 
 = 2.0.3 =
 * Correción enlances internos
@@ -108,11 +146,7 @@ Si tienes dudas, preguntas o te da errores ponte en contacto conmigo, estaré en
 * Primera versión liberada
 
 
-
 == Upgrade Notice ==
 
-= 2.0.0 =
-* 01-12-2015
-* Cambio estructural del plugin.
-* Optimización para adaptarse a diferentes temas.
-* Minificación de ficheros.
+= 3.1.0 =
+* Compatiblidad con navegadores Safari

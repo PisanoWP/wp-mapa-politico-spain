@@ -1,61 +1,23 @@
-.wpim-wrap-mapa{
-	text-align:center;
-}
-
-@media only screen and (min-width: 960px)  {
-	#wp-img-mapa{ 
-		width:601px !important;
-		/*height:477px !important;*/
-		
-		margin: 0;
-	    padding: 0;
-	    border: 0;
-		
-	}
-	
-}
 
 
-@media only screen and (min-width: 768px) and (max-width: 959px) {
-	#wp-img-mapa{ 
-		width:601px !important;
-		/*height:477px !important;*/
-		
-		margin: 0;
-	    padding: 0;
-	    border: 0;
-		
-	}
-	
+      [title]{
+	position:relative;
 }
-
-@media only screen and (min-width: 480px) and (max-width: 767px) {
-	#wp-img-mapa{
-		width:430px !important;
-		/*height:342px !important;*/
-		
-		margin: 0;
-	    padding: 0;
-	    border: 0;
-		
-	}
-	
+[title]:after{
+	content:attr(title);
+	color:#fff;
+	background:#333;
+	background:rgba(51,51,51,0.75);
+	padding:5px;
+	position:absolute;
+	left:-9999px;
+	opacity:0;
+	bottom:100%;
+	white-space:nowrap;
+	-webkit-transition:0.25s linear opacity;
 }
-			
-@media only screen and (max-width: 479px) {		
-	#wp-img-mapa{
-		width:270px !important;
-		/*height:214px !important;*/
-		
-		margin: 0;
-	    padding: 0;
-	    border: 0;
-	
-	}
-	
+[title]:hover:after{
+	left:5px;
+	opacity:1;
 }
-
-.wp-border-img-mapa{
-	border : 1px solid #ddd;
-	
-}
+.wp-border-img-mapa{border:1px solid #ddd}

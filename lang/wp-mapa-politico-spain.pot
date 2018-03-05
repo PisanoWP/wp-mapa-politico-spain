@@ -1,0 +1,225 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-11-18 19:22+0100\n"
+"PO-Revision-Date: 2017-11-18 19:22+0100\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"X-Generator: Eazy Po 0.9.5.3\n"
+
+#: wp-mapa-politico.php:54
+msgid "Donar"
+msgstr ""
+
+#: includes/class-wp-mapa-politico-settings.php:71
+msgid "WP Mapa Politico"
+msgstr ""
+
+#: includes/class-wp-mapa-politico-settings.php:100
+#: includes/class-wp-mapa-politico-settings.php:144
+msgid "Configuración"
+msgstr ""
+
+#: includes/class-wp-mapa-politico-settings.php:113
+msgid "Inicio"
+msgstr ""
+
+#: includes/class-wp-mapa-politico-settings.php:114
+msgid ""
+"Bienvenido al WP Mapa Político España, plugin WordPress que te permitirá "
+"mostrar un mapa político de España con áreas seleccionables."
+msgstr ""
+
+#: includes/class-wp-mapa-politico-settings.php:129
+msgid "Mapa"
+msgstr ""
+
+#: includes/class-wp-mapa-politico-settings.php:130
+msgid ""
+"Define los enlaces para cada una de las provincias. # es un enlace vacío, a "
+"usar sino se quiere definir enlace."
+msgstr ""
+
+#: includes/class-wp-mapa-politico-settings.php:145
+msgid "Configuración aspectos del plugin."
+msgstr ""
+
+#: includes/class-wp-mapa-politico-settings.php:149
+msgid "Color del fondo del mapa"
+msgstr ""
+
+#: includes/class-wp-mapa-politico-settings.php:150
+msgid "Seleccione el color del fondo del mapa."
+msgstr ""
+
+#: includes/class-wp-mapa-politico-settings.php:156
+msgid "Color del fondo defecto provincias"
+msgstr ""
+
+#: includes/class-wp-mapa-politico-settings.php:157
+msgid "Seleccione el color del fondo de las provincias."
+msgstr ""
+
+#: includes/class-wp-mapa-politico-settings.php:163
+msgid "Color provincia activa"
+msgstr ""
+
+#: includes/class-wp-mapa-politico-settings.php:164
+msgid "Seleccione el color de activación de las provincias."
+msgstr ""
+
+#: includes/class-wp-mapa-politico-settings.php:238
+msgid "WP Mapa Politico España"
+msgstr ""
+
+#: includes/class-wp-mapa-politico-settings.php:311
+msgid "Datos guardados correctamente"
+msgstr ""
+
+#: includes/class-wp-mapa-politico-settings.php:332
+#: includes/class-wp-mapa-politico-settings.php:350
+#: includes/class-wp-mapa-politico-settings.php:379
+msgid "Guardar cambios"
+msgstr ""
+
+#: includes/class-wp-mapa-politico-settings.php:446
+#: includes/class-wp-mapa-politico-settings.php:455
+#: includes/class-wp-mapa-politico.php:223
+#: includes/class-wp-mapa-politico.php:232
+msgid "Cheatin&#8217; huh?"
+msgstr ""
+
+#: includes/shortcodes.php:8
+msgid "ERROR NO SE HA PODIDO LOCALIZAR MAPA A MOSTRAR"
+msgstr ""
+
+#: includes/lib/class-wp-mapa-politico-admin-api.php:159
+msgid "Subir una imagen"
+msgstr ""
+
+#: includes/lib/class-wp-mapa-politico-admin-api.php:159
+msgid "Usar imagen"
+msgstr ""
+
+#: includes/lib/class-wp-mapa-politico-admin-api.php:159
+msgid "Subir nueva imagen"
+msgstr ""
+
+#: includes/lib/class-wp-mapa-politico-admin-api.php:160
+msgid "Borrar imagen"
+msgstr ""
+
+#: includes/lib/class-wp-mapa-politico-admin-api.php:182
+#, php-format
+msgid ""
+"Pulsa <a href=\"%s\">aquí</a> para empezar a definir los enlaces de cada una "
+"de las provincias."
+msgstr ""
+
+#: includes/lib/class-wp-mapa-politico-admin-api.php:184
+#, php-format
+msgid ""
+"¿Quieres cambiar el color del fondo, o de las provincias? pulsa <a href=\"%s"
+"\">aquí.</a>"
+msgstr ""
+
+#: includes/lib/class-wp-mapa-politico-admin-api.php:186
+#, php-format
+msgid ""
+"Utiliza el shortcode <strong>%s</strong> en los post o páginas donde mostrar "
+"el mapa político."
+msgstr ""
+
+#: includes/lib/class-wp-mapa-politico-admin-api.php:190
+msgid "AVISO"
+msgstr ""
+
+#: includes/lib/class-wp-mapa-politico-admin-api.php:190
+msgid ""
+"Esta nueva versión utiliza imágenes SVG, para obtener un plugin más ligero y "
+"compatible con la mayoría de los temas."
+msgstr ""
+
+#: includes/lib/class-wp-mapa-politico-admin-api.php:196
+msgid "Valora el plugin"
+msgstr ""
+
+#: includes/lib/class-wp-mapa-politico-admin-api.php:198
+#, php-format
+msgid ""
+"¿Te gusta el plugin? ¿lo estas usando en tu página?, pues puedes valorar el "
+"plugin en <a href=\"%s\" target=\"_blank\">WordPress.org</a>, que te estaría "
+"muy agradecido :-)"
+msgstr ""
+
+#: includes/lib/class-wp-mapa-politico-admin-api.php:205
+msgid "Invítame a un café"
+msgstr ""
+
+#: includes/lib/class-wp-mapa-politico-admin-api.php:206
+msgid ""
+"Detrás de este plugins hay un montón de horas de trabajo, muchas de ellas "
+"nocturnas, así que ¿por qué no me invitas a un café? así podré seguir "
+"haciendo mejoras"
+msgstr ""
+
+#: includes/lib/class-wp-mapa-politico-admin-api.php:214
+msgid "Soporte"
+msgstr ""
+
+#: includes/lib/class-wp-mapa-politico-admin-api.php:215
+msgid ""
+"¿Tienes dudas o sugerencias? Aquí tienes unos enlaces que te pueden ayudar."
+msgstr ""
+
+#: includes/lib/class-wp-mapa-politico-admin-api.php:217
+msgid "Preguntas frecuentes"
+msgstr ""
+
+#: includes/lib/class-wp-mapa-politico-admin-api.php:218
+msgid "Sugerir mejoras"
+msgstr ""
+
+#: includes/lib/class-wp-mapa-politico-admin-api.php:219
+msgid "Informar de un Bug"
+msgstr ""
+
+#: includes/lib/class-wp-mapa-politico-admin-api.php:237
+msgid "Enlaces Asociados a Provincias"
+msgstr ""
+
+#: includes/lib/class-wp-mapa-politico-admin-api.php:242
+msgid "Zona"
+msgstr ""
+
+#: includes/lib/class-wp-mapa-politico-admin-api.php:243
+msgid "Href"
+msgstr ""
+
+#: includes/lib/class-wp-mapa-politico-admin-api.php:244
+msgid "Title"
+msgstr ""
+
+#: includes/lib/class-wp-mapa-politico-admin-api.php:245
+msgid "Target"
+msgstr ""
+
+#: includes/lib/class-wp-mapa-politico-admin-api.php:260
+msgid "Nueva Ventana"
+msgstr ""
+
+#: includes/lib/class-wp-mapa-politico-admin-api.php:261
+msgid "Misma Ventana"
+msgstr ""

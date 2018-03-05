@@ -109,12 +109,14 @@ class WP_Mapa_Politico {
 			$this->admin = new WP_Mapa_Politico_Admin_API();
 		}
 
-		// Handle localisation
 		$this->load_plugin_textdomain();
-		add_action( 'init', array( $this, 'load_localisation' ), 0 );
+
+		//add_action( 'plugins_loaded', array( $this, 'wpmps_load_plugin_textdomain' ) );
+
+
 	} // End __construct ()
 
-	
+
 
 	/**
 	 * Load frontend CSS.
@@ -134,17 +136,10 @@ class WP_Mapa_Politico {
 	 * @return  void
 	 */
 	public function enqueue_scripts () {
-		
-		wp_register_script( $this->_token . '-frontend', esc_url( $this->assets_url ) . 'js/frontend' . $this->script_suffix . '.js', array( 'jquery' ), $this->_version );
-		wp_enqueue_script( $this->_token . '-frontend' );
-		
-		
-		$translation_array = array( 'siteurl' => get_bloginfo('url')
-								,	'ajaxurl' => admin_url( 'admin-ajax.php' ) 
-								);
-		wp_localize_script( $this->_token . '-frontend', 'bloginfo', $translation_array );
-		
-		
+
+
+
+
 	} // End enqueue_scripts ()
 
 	/**
@@ -156,8 +151,8 @@ class WP_Mapa_Politico {
 	public function admin_enqueue_styles ( $hook = '' ) {
 		wp_register_style( $this->_token . '-admin', esc_url( $this->assets_url ) . 'css/admin.css', array(), $this->_version );
 		wp_register_style( $this->_token . '-admin', get_stylesheet_uri(), array( 'dashicons' ), array(), $this->_version );
-		
-		
+
+
 		wp_enqueue_style( $this->_token . '-admin' );
 	} // End admin_enqueue_styles ()
 
@@ -172,15 +167,7 @@ class WP_Mapa_Politico {
 		wp_enqueue_script( $this->_token . '-admin' );
 	} // End admin_enqueue_scripts ()
 
-	/**
-	 * Load plugin localisation
-	 * @access  public
-	 * @since   1.0.0
-	 * @return  void
-	 */
-	public function load_localisation () {
-		load_plugin_textdomain( 'wordpress-plugin-template', false, dirname( plugin_basename( $this->file ) ) . '/lang/' );
-	} // End load_localisation ()
+
 
 	/**
 	 * Load plugin textdomain
@@ -189,14 +176,13 @@ class WP_Mapa_Politico {
 	 * @return  void
 	 */
 	public function load_plugin_textdomain () {
-	    $domain = 'wpmps-plugin';
 
-	    $locale = apply_filters( 'plugin_locale', get_locale(), $domain );
+	    $locale = apply_filters( 'plugin_locale', get_locale(), WPMPS_TEXTDOMAIN );
 
-	    load_textdomain( $domain, WP_LANG_DIR . '/' . $domain . '/' . $domain . '-' . $locale . '.mo' );   
-	    
-	    load_plugin_textdomain( $domain, false, dirname( plugin_basename( $this->file ) ) . '/lang/' );
-	    
+	    load_textdomain( WPMPS_TEXTDOMAIN, WP_LANG_DIR . '/' . WPMPS_TEXTDOMAIN . '/' . WPMPS_TEXTDOMAIN . '-' . $locale . '.mo' );
+
+	    load_plugin_textdomain( WPMPS_TEXTDOMAIN, false, dirname( plugin_basename( $this->file ) ) . '/lang/' );
+
 	} // End load_plugin_textdomain ()
 
 	/**
@@ -241,7 +227,7 @@ class WP_Mapa_Politico {
 	 * @return  void
 	 */
 	public function install () {
-		
+
 		WP_Mapa_Politico_Coordenadas::set_default_map();
 		$this->_log_version_number();
 	} // End install ()

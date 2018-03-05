@@ -52,6 +52,7 @@ class WP_Mapa_Politico_Settings {
 
 		// Add settings link to plugins page
 		add_filter( 'plugin_action_links_' . plugin_basename( $this->parent->file ) , array( $this, 'add_settings_link' ) );
+
 	}
 
 	/**
@@ -67,7 +68,7 @@ class WP_Mapa_Politico_Settings {
 	 * @return void
 	 */
 	public function add_menu_item () {
-		$page = add_options_page( __( 'WP Mapa Politico', 'wpmps-plugin' ) , __( 'WP Mapa Politico', 'wpmps-plugin' ) , 'manage_options' , $this->parent->_token . '_settings' ,  array( $this, 'settings_page' ) );
+		$page = add_options_page( __( 'WP Mapa Politico', WPMPS_TEXTDOMAIN ) , __( 'WP Mapa Politico', WPMPS_TEXTDOMAIN ) , 'manage_options' , $this->parent->_token . '_settings' ,  array( $this, 'settings_page' ) );
 		add_action( 'admin_print_styles-' . $page, array( $this, 'settings_assets' ) );
 	}
 
@@ -80,14 +81,14 @@ class WP_Mapa_Politico_Settings {
 		// We're including the farbtastic script & styles here because they're needed for the colour picker
 		// If you're not including a colour picker field then you can leave these calls out as well as the farbtastic dependency for the wpt-admin-js script below
 		wp_enqueue_style( 'farbtastic' );
-    	wp_enqueue_script( 'farbtastic' );
+		wp_enqueue_script( 'farbtastic' );
 
-    	// We're including the WP media scripts here because they're needed for the image upload field
-    	// If you're not including an image upload then you can leave this function call out
-    	wp_enqueue_media();
+		// We're including the WP media scripts here because they're needed for the image upload field
+		// If you're not including an image upload then you can leave this function call out
+		wp_enqueue_media();
 
-    	wp_register_script( $this->parent->_token . '-settings-js', $this->parent->assets_url . 'js/settings' . $this->parent->script_suffix . '.js', array( 'farbtastic', 'jquery' ), '1.0.0' );
-    	wp_enqueue_script( $this->parent->_token . '-settings-js' );
+		wp_register_script( $this->parent->_token . '-settings-js', $this->parent->assets_url . 'js/settings' . $this->parent->script_suffix . '.js', array( 'farbtastic', 'jquery' ), '1.0.0' );
+		wp_enqueue_script( $this->parent->_token . '-settings-js' );
 	}
 
 	/**
@@ -96,7 +97,7 @@ class WP_Mapa_Politico_Settings {
 	 * @return array 		Modified links
 	 */
 	public function add_settings_link ( $links ) {
-		$settings_link = '<a href="options-general.php?page=' . $this->parent->_token . '_settings">' . __( 'Configuración', 'wpmps-plugin' ) . '</a>';
+		$settings_link = '<a href="options-general.php?page=' . $this->parent->_token . '_settings">' . __( 'Configuración', WPMPS_TEXTDOMAIN ) . '</a>';
   		array_push( $links, $settings_link );
   		return $links;
 	}
@@ -106,12 +107,11 @@ class WP_Mapa_Politico_Settings {
 	 * @return array Fields to be displayed on settings page
 	 */
 	private function settings_fields () {
-		
-		
+
+
 		$settings['inicio'] = array(
-				'title'					=> __('Inicio', 'wpmps-plugin' ),
-				'description'			=> __( 'Bienvenido al WP Mapa Politico España, plugin WordPress que te
-											permitirá mostrar un mapa politico de España con areas seleccionables.', 'wpmps-plugin' ),
+				'title'					=> __('Inicio', WPMPS_TEXTDOMAIN ),
+				'description'			=> __( 'Bienvenido al WP Mapa Político España, plugin WordPress que te permitirá mostrar un mapa político de España con áreas seleccionables.', WPMPS_TEXTDOMAIN ),
 				'fields'				=> array(
 						array(
 								'id' 			=> 'inicio',
@@ -119,15 +119,15 @@ class WP_Mapa_Politico_Settings {
 								'description'	=> '',
 								'type'			=> 'inicio',
 								'default'		=> '0',
-		
+
 						),
 				)
 		);
-		
-				
+
+
 		$settings['mapa'] = array(
-				'title'					=> __( 'Mapa', 'wpmps-plugin' ),
-				'description'			=> __( 'Define los enlaces para cada una de las provincias. # es un enlace vacío, a usar sino se quiere definir enlace.', 'wpmps-plugin' ),
+				'title'					=> __( 'Mapa', WPMPS_TEXTDOMAIN ),
+				'description'			=> __( 'Define los enlaces para cada una de las provincias. # es un enlace vacío, a usar sino se quiere definir enlace.', WPMPS_TEXTDOMAIN ),
 				'fields'				=> array(
 												array(
 														'id' 			=> 'mapa',
@@ -135,29 +135,42 @@ class WP_Mapa_Politico_Settings {
 														'description'	=> '',
 														'type'			=> 'mapa',
 														'default'		=> '0',
-														
+
 												),
 										)
 								);
-						
+
 		$settings['configuracion'] = array(
-				'title'					=> __( 'Configuración', 'wpmps-plugin' ),
-				'description'			=> __( 'Configuración aspectos del plugins.', 'wpmps-plugin' ),
-				'fields'				=> array(					
+				'title'					=> __( 'Configuración', WPMPS_TEXTDOMAIN ),
+				'description'			=> __( 'Configuración aspectos del plugin.', WPMPS_TEXTDOMAIN ),
+				'fields'				=> array(
 												array(
 														'id' 			=> 'background_color',
-														'label'			=> __( 'Color del fondo del mapa', 'wpmps-plugin' ),
-														'description'	=> __( 'Seleccione el color del fondo del mapa.', 'wpmps-plugin' ),
+														'label'			=> __( 'Color del fondo del mapa', WPMPS_TEXTDOMAIN ),
+														'description'	=> __( 'Seleccione el color del fondo del mapa.', WPMPS_TEXTDOMAIN ),
 														'type'			=> 'color',
 														'default'		=> '#dde6da'
 												),
-						
+												array(
+														'id' 			=> 'background_provincia_color',
+														'label'			=> __( 'Color del fondo defecto provincias', WPMPS_TEXTDOMAIN ),
+														'description'	=> __( 'Seleccione el color del fondo de las provincias.', WPMPS_TEXTDOMAIN ),
+														'type'			=> 'color',
+														'default'		=> '#8098a8'
+												),
+												array(
+														'id' 			=> 'hover_provincia_color',
+														'label'			=> __( 'Color provincia activa', WPMPS_TEXTDOMAIN ),
+														'description'	=> __( 'Seleccione el color de activación de las provincias.', WPMPS_TEXTDOMAIN ),
+														'type'			=> 'color',
+														'default'		=> '#265a82'
+												),
 											)
 								);
-		
-								
-								
-		
+
+
+
+
 
 		$settings = apply_filters( $this->parent->_token . '_settings_fields', $settings );
 
@@ -222,7 +235,7 @@ class WP_Mapa_Politico_Settings {
 
 		// Build page HTML
 		$html = '<div class="wrap" id="' . $this->parent->_token . '_settings">' . "\n";
-		$html .= '<h2>' . __( 'WP Mapa Politico España' , 'wpmps-plugin' ) . '</h2>' . "\n";
+		$html .= '<h2>' . __( 'WP Mapa Politico España' , WPMPS_TEXTDOMAIN ) . '</h2>' . "\n";
 		$html .= '<div>' .  "\n";
 
 		$tab = '';
@@ -264,64 +277,68 @@ class WP_Mapa_Politico_Settings {
 
 			$html .= '</h2>' . "\n";
 		}
-		
+
 		if ($tab=='inicio' || $tab=='') {
-			
+
 			// Get settings fields
 			ob_start();
 			settings_fields( $this->parent->_token . '_settings' );
 			$this->do_settings_sections_wmps( $this->parent->_token . '_settings' );
-				
+
 			$html .= ob_get_clean();
-			
-		
+
+
 		} else if ($tab=='mapa') {
-			
+
 			if (isset($_POST['Submit'])) {
-							
+
 				$wpmps_mapas =  get_option( 'wpmps_plugin_mapas' );
-				
+
 				foreach ($_POST as $key => $valor){
-				
+					error_log($key);
 					$v = explode( '-', $key);
-				
-					if (isset($wpmps_mapas[$v[0]][$v[1]][$v[2]][$v[3]])){
-				
-						$wpmps_mapas[$v[0]][$v[1]][$v[2]][$v[3]] = $valor;
-				
+					if (4 == count($v) ) {
+						if ( isset( $wpmps_mapas[$v[0]][$v[1]][$v[2]][$v[3]] ) ){
+							$wpmps_mapas[$v[0]][$v[1]][$v[2]][$v[3]] = $valor;
+
+						}
+
 					}
-				
+
+
+
+
 				}
 				update_option( 'wpmps_plugin_mapas', $wpmps_mapas );
-			
+
 				echo '<div id="setting-error-settings_updated" class="updated settings-error notice is-dismissible">'
-						.'<p>'. __( 'Datos guardados correctamente' , 'wpmps-plugin' ) .'</p>'
+						.'<p>'. __( 'Datos guardados correctamente' , WPMPS_TEXTDOMAIN ) .'</p>'
 						.'<button type="button" class="notice-dismiss"><span class="screen-reader-text">Descartar este aviso.</span></button>'
 					.'</div>';
 			}
-				
+
 			// Formulario para capturar la informacion del mapa y guararlo como una única opcion
 			// $bnn_action = '../wp-content/plugins/'.plugin_basename( __DIR__ ).'/lib/grabar_coordenadas.php';
 			$bnn_action = "";
 			$html .= '<form method="post" action="'.$bnn_action.'" enctype="multipart/form-data">' . "\n";
-			
-			
-			
+
+
+
 			// Get settings fields
 			ob_start();
 			settings_fields( $this->parent->_token . '_settings' );
 			$this->do_settings_sections_wmps( $this->parent->_token . '_settings' );
-			
+
 			$html .= ob_get_clean();
-			
+
 			$html .= '<p class="submit">' . "\n";
 			$html .= '<input type="hidden" name="tab" value="' . esc_attr( $tab ) . '" />' . "\n";
-			$html .= '<input name="Submit" type="submit" class="button-primary" value="' . esc_attr( __( 'Guardar cambios' , 'wpmps-plugin' ) ) . '" />' . "\n";
+			$html .= '<input name="Submit" type="submit" class="button-primary" value="' . esc_attr( __( 'Guardar cambios' , WPMPS_TEXTDOMAIN ) ) . '" />' . "\n";
 			$html .= '</p>' . "\n";
 			$html .= '</form>' . "\n";
-			
-			
-			
+
+
+
 		} else {
 
 			$html .= '<form method="post" action="options.php" enctype="multipart/form-data">' . "\n";
@@ -334,70 +351,70 @@ class WP_Mapa_Politico_Settings {
 
 			$html .= '<p class="submit">' . "\n";
 			$html .= '<input type="hidden" name="tab" value="' . esc_attr( $tab ) . '" />' . "\n";
-			$html .= '<input name="Submit" type="submit" class="button-primary" value="' . esc_attr( __( 'Guardar cambios' , 'wpmps-plugin' ) ) . '" />' . "\n";
+			$html .= '<input name="Submit" type="submit" class="button-primary" value="' . esc_attr( __( 'Guardar cambios' , WPMPS_TEXTDOMAIN ) ) . '" />' . "\n";
 			$html .= '</p>' . "\n";
 			$html .= '</form>' . "\n";
-			
+
 		}
-		
+
 		$html .= '</div>' . "\n";
 
 		echo $html;
 	}
-	
-	
+
+
 	function do_settings_sections_wmps( $page ) {
 		global $wp_settings_sections, $wp_settings_fields;
-	
+
 		if ( ! isset( $wp_settings_sections[$page] ) )
 			return;
-	
+
 		foreach ( (array) $wp_settings_sections[$page] as $section ) {
 			if ( $section['title'] )
 				echo "<h3>{$section['title']}</h3>\n";
-	
+
 			if ( $section['callback'] )
 				call_user_func( $section['callback'], $section );
-	
+
 			if ( ! isset( $wp_settings_fields ) || !isset( $wp_settings_fields[$page] ) || !isset( $wp_settings_fields[$page][$section['id']] ) )
 				continue;
-			
-			
-			echo '<input name="Submit" type="submit" class="button-primary" value="' . esc_attr( __( 'Guardar cambios' , 'wpmps-plugin' ) ) . '" />' . "\n";
-			
+
+
+			echo '<input name="Submit" type="submit" class="button-primary" value="' . esc_attr( __( 'Guardar cambios' , WPMPS_TEXTDOMAIN ) ) . '" />' . "\n";
+
 			echo '<table class="form-table">';
 			$this->do_settings_fields_wpms( $page, $section['id'] );
 			echo '</table>';
 		}
 	}
-	
-	
+
+
 	function do_settings_fields_wpms($page, $section) {
 		global $wp_settings_fields;
-	
+
 		if ( ! isset( $wp_settings_fields[$page][$section] ) )
 			return;
-	
-		
-		
+
+
+
 		foreach ( (array) $wp_settings_fields[$page][$section] as $field ) {
 			$class = '';
-	
+
 			if ( ! empty( $field['args']['class'] ) ) {
 				$class = ' class="' . esc_attr( $field['args']['class'] ) . '"';
 			}
-	
-			
+
+
 			echo "<tr{$class}>";
-	
+
 			if ( ! empty( $field['args']['label_for'] ) ) {
 				echo '<th scope="col"><label for="' . esc_attr( $field['args']['label_for'] ) . '">' . $field['title'] . '</label></th>';
-				
+
 			} else {
 				echo '<th scope="col">' . $field['title'] . '</th>';
-				
+
 			}
-	
+
 			echo '</tr>';
 			echo "<tr{$class}>";
 			echo '<td>';
