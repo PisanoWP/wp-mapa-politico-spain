@@ -156,8 +156,8 @@ class WP_Mapa_Politico_Admin_API {
 					$image_thumb = wp_get_attachment_thumb_url( $data );
 				}
 				$html .= '<img id="' . $option_name . '_preview" class="image_preview" src="' . $image_thumb . '" /><br/>' . "\n";
-				$html .= '<input id="' . $option_name . '_button" type="button" data-uploader_title="' . __( 'Subir una imagen' , 'wpmps-plugin' ) . '" data-uploader_button_text="' . __( 'Usar imagen' , 'wpmps-plugin' ) . '" class="image_upload_button button" value="'. __( 'Subir nueva imagen' , 'wpmps-plugin' ) . '" />' . "\n";
-				$html .= '<input id="' . $option_name . '_delete" type="button" class="image_delete_button button" value="'. __( 'Borrar imagen' , 'wpmps-plugin' ) . '" />' . "\n";
+				$html .= '<input id="' . $option_name . '_button" type="button" data-uploader_title="' . __( 'Subir una imagen' , WPMPS_TEXTDOMAIN ) . '" data-uploader_button_text="' . __( 'Usar imagen' , WPMPS_TEXTDOMAIN ) . '" class="image_upload_button button" value="'. __( 'Subir nueva imagen' , WPMPS_TEXTDOMAIN ) . '" />' . "\n";
+				$html .= '<input id="' . $option_name . '_delete" type="button" class="image_delete_button button" value="'. __( 'Borrar imagen' , WPMPS_TEXTDOMAIN ) . '" />' . "\n";
 				$html .= '<input id="' . $option_name . '" class="image_data_field" type="hidden" name="' . $option_name . '" value="' . $data . '"/><br/>' . "\n";
 			break;
 
@@ -174,37 +174,50 @@ class WP_Mapa_Politico_Admin_API {
 				?>
 
 				<div>
-					<ol>						
-						<li> Pulsa <a href="<?php echo get_admin_url(); ?>options-general.php?page=wpmps_settings&tab=mapa">aquí</a> para empezar a definir los enlaces de cada una de las provincias.</li>
-						<li> ¿Quieres cambiar el color del fondo ? pulsa <a href="<?php echo get_admin_url(); ?>options-general.php?page=wpmps_settings&tab=configuracion">aquí.</a></li>
-						<li> Utiliza el shortcode <strong>[wpmps-map]</strong> en los post o páginas donde mostrar el mapa político.</li>
+					<ol>
+						<?php
+							$url_options = get_admin_url().'options-general.php?page=wpmps_settings&tab=';
 
+						?>
+						<li><?php printf(__('Pulsa <a href="%s">aquí</a> para empezar a definir los enlaces de cada una de las provincias.', WPMPS_TEXTDOMAIN)
+														, esc_url($url_options.'mapa') ); ?></li>
+						<li><?php printf(__('¿Quieres cambiar el color del fondo, o de las provincias? pulsa <a href="%s">aquí.</a>', WPMPS_TEXTDOMAIN)
+														, esc_url($url_options.'configuracion') ); ?> </li>
+						<li><?php printf(__('Utiliza el shortcode <strong>%s</strong> en los post o páginas donde mostrar el mapa político.', WPMPS_TEXTDOMAIN)
+														, '[wpmps-map]' ); ?> </li>
 					</ol>
 					<ul>
-						<li> <strong>AVISO VERSIONES ANTERIORES:</strong> Las versiones anteriores del plugin usaban el shortcode <strong>[wp-political-map-spain]</strong>.<br>
-						Este shortcode esta obsoleto y dejará de funcionar en futuras versiones. </li>
+						<li> <strong><?php _e('AVISO', WPMPS_TEXTDOMAIN); ?></strong><?php _e('Esta nueva versión utiliza imágenes SVG, para obtener un plugin más ligero y compatible con la mayoría de los temas.', WPMPS_TEXTDOMAIN); ?></li>
 					</ul>
+
 				</div>
 				<br />
 
-                <h3>Valora el plugin <span class="cinco-estrellas"></span></h3>
-				<p> ¿Te gusta el plugin? ¿lo estas usando en tu página?, pues puedes valorar el plugin
-				 en <a href="http://wordpress.org/support/view/plugin-reviews/wp-mapa-politico-spain?filter=5" target="_blank">WordPress.org</a> ,
+        <h3><?php _e('Valora el plugin', WPMPS_TEXTDOMAIN); ?> <span class="cinco-estrellas"></span></h3>
+				<p>
+					<?php printf(__('¿Te gusta el plugin? ¿lo estas usando en tu página?, pues puedes valorar el plugin en <a href="%s" target="_blank">WordPress.org</a>, que te estaría muy agradecido :-)', WPMPS_TEXTDOMAIN )
+					, esc_url('https://wordpress.org/support/view/plugin-reviews/wp-mapa-politico-spain?filter=5') );
 
-				 que te estaría muy agradecido :-)</p>
-				<br />
+					?>
+				</p>
 
-				<h3>Soporte</h3>
-				<p>¿Tienes dudas o sugerencias? Aquí tienes unos enlaces que te pueden ayudar.</p>
+
+				<h3><?php _e('Invítame a un café', WPMPS_TEXTDOMAIN); ?></h3>
+				<p><?php _e('Detrás de este plugins hay un montón de horas de trabajo, muchas de ellas nocturnas, así que ¿por qué no me invitas a un café? así podré seguir haciendo mejoras', WPMPS_TEXTDOMAIN); ?></p>
+
+					<a  href="https://www.paypal.me/jcglp/1.5" title="Invitame a un café" target="_blank">
+						<img src="<?php echo plugins_url( 'wp-mapa-politico-spain/images/btn_donate_LG.gif'); ?>" alt="paypal logo">
+				 </a>
+
+			 </p>
+
+				<h3><?php _e('Soporte', WPMPS_TEXTDOMAIN); ?></h3>
+				<p> <?php _e('¿Tienes dudas o sugerencias? Aquí tienes unos enlaces que te pueden ayudar.', WPMPS_TEXTDOMAIN); ?></p>
 				<ul>
-					<li><a target="_blank" href="https://mispinitoswp.wordpress.com/faq/">Preguntas frecuentes.</a></li>
-					<li><a target="_blank" href="https://mispinitoswp.wordpress.com/contacto/">Sugerir mejoras</a></li>
-					<li><a target="_blank" href="https://wordpress.org/support/plugin/wp-mapa-politico-spain">Informar de un Bug</a></li>
-
-
+					<li><a target="_blank" href="https://mispinitoswp.wordpress.com/faq/"><?php _e('Preguntas frecuentes', WPMPS_TEXTDOMAIN); ?></a></li>
+					<li><a target="_blank" href="https://mispinitoswp.wordpress.com/contacto/"><?php _e('Sugerir mejoras', WPMPS_TEXTDOMAIN); ?></a></li>
+					<li><a target="_blank" href="https://wordpress.org/support/plugin/wp-mapa-politico-spain"><?php _e('Informar de un Bug', WPMPS_TEXTDOMAIN); ?></a></li>
 				</ul>
-
-
 
 				<?php
 
@@ -221,15 +234,15 @@ class WP_Mapa_Politico_Admin_API {
 				$mapa = $opciones[$id_mapa];
 
 				?>
-				<h3><?php  _e ('Enlaces Asociados a Provincias', 'wpmps-plugin'); ?></h3>
+				<h3><?php  _e ('Enlaces Asociados a Provincias', WPMPS_TEXTDOMAIN); ?></h3>
 
                 <input name="id-mapa" type="hidden" value=<?php echo $id_mapa; ?> >
                 <table>
                 	<tr>
-                		<th><?php _e ('Zona', 'wpmps-plugin' ); ?></th>
-                		<th><?php _e ('Href', 'wpmps-plugin' ); ?></th>
-                		<th><?php _e ('Title', 'wpmps-plugin' ); ?></th>
-                		<th><?php _e ('Target', 'wpmps-plugin' ); ?></th>
+                		<th><?php _e ('Zona', WPMPS_TEXTDOMAIN ); ?></th>
+                		<th><?php _e ('Href', WPMPS_TEXTDOMAIN ); ?></th>
+                		<th><?php _e ('Title', WPMPS_TEXTDOMAIN ); ?></th>
+                		<th><?php _e ('Target', WPMPS_TEXTDOMAIN ); ?></th>
 
                 	</tr>
 
@@ -244,16 +257,10 @@ class WP_Mapa_Politico_Admin_API {
                     	<td><input type="text" name="<?php echo $id_mapa.'-areas-'.$key."-title"?>" value="<?php  echo $zona["title"];?>"></td>
 
 						<td><select name="<?php echo $id_mapa.'-areas-'.$key."-target"?>" >
-							<option <?php if ( $zona["target"]=='_blank') echo 'selected'; ?> value="_blank">Nueva Ventana</option>
-							<option <?php if ( $zona["target"]=='_self') echo 'selected'; ?> value="_self">Misma Ventana</option>
+							<option <?php if ( $zona["target"]=='_blank') echo 'selected'; ?> value="_blank"><?php _e('Nueva Ventana', WPMPS_TEXTDOMAIN); ?></option>
+							<option <?php if ( $zona["target"]=='_self') echo 'selected'; ?> value="_self"><?php _e('Misma Ventana', WPMPS_TEXTDOMAIN); ?></option>
 						</select>
                     	</td>
-                    	<?php
-                    		/* Comentado la caja que muestra las coordenadas del area
-                    		 * <td><input type="text" name="<?php echo $wpim["id"]."-coordenadas"?>" value="<?php echo $wpim["coordenadas"];?>"></td>
-                    		 *
-                    		 */?>
-
                     </tr>
                     <?php }  ?>
 
