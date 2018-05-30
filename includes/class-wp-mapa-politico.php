@@ -109,6 +109,10 @@ class WP_Mapa_Politico {
 			$this->admin = new WP_Mapa_Politico_Admin_API();
 		}
 
+
+		// Link para donar en la lista de plugins
+		add_filter( 'plugin_row_meta', array( $this, 'donate_link'), 10, 2 );
+
 		$this->load_plugin_textdomain();
 
 		//add_action( 'plugins_loaded', array( $this, 'wpmps_load_plugin_textdomain' ) );
@@ -141,6 +145,16 @@ class WP_Mapa_Politico {
 
 
 	} // End enqueue_scripts ()
+
+	public function donate_link($links, $file) {
+	    if ( dirname( $file ) == plugin_basename($this->dir) ) {
+					$links[] = '<a href="https://www.paypal.me/jcglp/1.5" target="_blank">' . __('Donar', WPMPS_TEXTDOMAIN) . '</a>';
+	    }
+
+	    return $links;
+	} // donate_link()
+
+
 
 	/**
 	 * Load admin CSS.

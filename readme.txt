@@ -4,7 +4,7 @@ Tags: wordpress, plugin, map, image, spain, svg
 Donate link: https://www.paypal.me/jcglp
 Requires at least: 3.9
 Tested up to: 4.9
-Stable tag: 3.1.1
+Stable tag: 3.1.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -65,6 +65,10 @@ Si tienes dudas, preguntas o te da errores ponte en contacto conmigo, estaré en
 
 
 == Changelog ==
+
+= 3.1.2 =
+* Tested 4.9.6
+* Prueba de vida. Aún hay alguien detrás del plugin
 
 = 3.1.1 =
 * Fichero de Internationalization
@@ -148,5 +152,6 @@ Si tienes dudas, preguntas o te da errores ponte en contacto conmigo, estaré en
 
 == Upgrade Notice ==
 
-= 3.1.0 =
-* Compatiblidad con navegadores Safari
+= 3.1.2 =
+* Tested 4.9.6
+* Prueba de vida. Aún hay alguién detras del plugin
