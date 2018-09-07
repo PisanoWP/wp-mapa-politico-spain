@@ -1,7 +1,7 @@
 ===  WP Mapa Politico España ===
 Contributors: jcglp
 Tags: wordpress, plugin, map, image, spain, svg
-Donate link: https://www.paypal.me/jcglp
+Donate link: https://www.paypal.me/jcglp/1.5
 Requires at least: 3.9
 Tested up to: 4.9
 Stable tag: 3.1.2
@@ -26,7 +26,7 @@ Para instalar el plugin.
 2. Activa el plugin a través del menu 'Plugins' en WordPress.
 3. Para mostrar el mapa usar el shortcode  [wp-political-map-spain]
 
-O bien, desde el panel de control de wordpress
+O bien, desde el panel de control de WordPress
 
 1. Ir a la sección Plugin
 2. Haz click en el enlace Añadir nuevo
@@ -65,6 +65,9 @@ Si tienes dudas, preguntas o te da errores ponte en contacto conmigo, estaré en
 
 
 == Changelog ==
+
+= 3.1.3 =
+* Compatiblidad con navegadores Safari, otra vez...
 
 = 3.1.2 =
 * Tested 4.9.6
@@ -152,6 +155,5 @@ Si tienes dudas, preguntas o te da errores ponte en contacto conmigo, estaré en
 
 == Upgrade Notice ==
 
-= 3.1.2 =
-* Tested 4.9.6
-* Prueba de vida. Aún hay alguién detras del plugin
+= 3.1.3 =
+* Compatiblidad con navegadores Safari, otra vez...

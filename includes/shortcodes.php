@@ -3,10 +3,12 @@
 	add_shortcode( 'wpmps-map', 'wpmps_show_map' );
 	function wpmps_show_map( $atts ){
 
-		$pagina_inicio = wpmps_getUrlContent(plugins_url( 'wp-mapa-politico-spain/images/mapa_base_00.svg'));
+		$svg_url = plugins_url( 'wp-mapa-politico-spain/images/mapa_base_00.svg');
+		$resultado = wpmps_getUrlContent($svg_url);
+		$pagina_inicio = $resultado['imagen'];
 		if (!$pagina_inicio) {
 			$mensaje = __('ERROR NO SE HA PODIDO LOCALIZAR MAPA A MOSTRAR' ,WPMPS_TEXTDOMAIN);
-			return '<div class="error">'.$mensaje.'</div>';
+			return '<div class="error" data-url="'.$svg_url.'" data-httpcode="'.$resultado['httpcode'].'">'.$mensaje.'</div>';
 		}
 
 
@@ -62,15 +64,22 @@
 
 
 function wpmps_getUrlContent($url){
+	$ua = 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US) AppleWebKit/525.13 (KHTML, like Gecko) Chrome/0.A.B.C Safari/525.13';
+	//$ua = 'Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; .NET CLR 1.1.4322)';
+
 	$ch = curl_init();
 	curl_setopt($ch, CURLOPT_URL, $url);
-	curl_setopt($ch, CURLOPT_USERAGENT, 'Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; .NET CLR 1.1.4322)');
+	curl_setopt($ch, CURLOPT_USERAGENT, $ua);
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 	curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 5);
 	curl_setopt($ch, CURLOPT_TIMEOUT, 5);
 	$data = curl_exec($ch);
 	$httpcode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 	curl_close($ch);
-	return ($httpcode>=200 && $httpcode<300) ? $data : false;
+	$resultado = array('imagen'=>($httpcode>=200 && $httpcode<300) ? $data : false,
+										'httpcode'=>$httpcode);
+
+	return $resultado;
+
 
 }
