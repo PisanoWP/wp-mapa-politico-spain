@@ -69,6 +69,11 @@ class WP_Mapa_Politico_Admin_API {
 
 		switch( $field['type'] ) {
 
+			case 'separador':
+				$html .= '<hr />' . "\n";
+			break;
+
+
 			case 'text':
 			case 'url':
 			case 'email':

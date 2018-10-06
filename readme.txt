@@ -4,7 +4,7 @@ Tags: wordpress, plugin, map, image, spain, svg
 Donate link: https://www.paypal.me/jcglp/1.5
 Requires at least: 3.9
 Tested up to: 4.9
-Stable tag: 3.1.2
+Stable tag: 3.1.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -24,7 +24,7 @@ Para instalar el plugin.
 
 1. Descarga el pluguin, descomprime el archivo y súbelo a la carpeta /wp-content/plugins/
 2. Activa el plugin a través del menu 'Plugins' en WordPress.
-3. Para mostrar el mapa usar el shortcode  [wp-political-map-spain]
+3. Para mostrar el mapa usar el shortcode   [wpmps-map]
 
 O bien, desde el panel de control de WordPress
 
@@ -65,6 +65,11 @@ Si tienes dudas, preguntas o te da errores ponte en contacto conmigo, estaré en
 
 
 == Changelog ==
+
+= 3.1.4 =
+* Nueva opción para decidir si mostrar o no el borde
+* Elección del color del borde
+* css específico para IE, corrige mapa pequeño
 
 = 3.1.3 =
 * Compatiblidad con navegadores Safari, otra vez...
@@ -155,5 +160,7 @@ Si tienes dudas, preguntas o te da errores ponte en contacto conmigo, estaré en
 
 == Upgrade Notice ==
 
-= 3.1.3 =
-* Compatiblidad con navegadores Safari, otra vez...
+= 3.1.4 =
+* Nueva opción para decidir si mostrar o no el borde
+* Elección del color del borde
+* css específico para IE, corrige mapa pequeño

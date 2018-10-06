@@ -2,10 +2,11 @@
 <svg
    version="1.1"
    viewBox="0 0 630 400"
-   id="map"
-   preserveAspectRatio="xMinYMin meet">
+   id="wpmps-spain-map"
+   class="wpmps-svg-spain-map-style"
+   preserveAspectRatio="xMinYMin slice">
   <g class="provincia madrid">
-    <a xmlns:xlink="http://www.w3.org/1999/xlink"  
+    <a xmlns:xlink="http://www.w3.org/1999/xlink"
        xlink:href="[href28]"
        target="[target28]"
        >
@@ -19,7 +20,7 @@
   </g>
 
   <g class="provincia segovia">
-    <a xmlns:xlink="http://www.w3.org/1999/xlink"  
+    <a xmlns:xlink="http://www.w3.org/1999/xlink"
        xlink:href="[href40]"
        target="[target40]"
        >
@@ -33,7 +34,7 @@
   </g>
 
   <g class="provincia salamanca">
-    <a xmlns:xlink="http://www.w3.org/1999/xlink"  
+    <a xmlns:xlink="http://www.w3.org/1999/xlink"
        xlink:href="[href37]"
        target="[target37]"
        >
@@ -49,7 +50,7 @@
   </g>
 
   <g class="provincia avila">
-    <a xmlns:xlink="http://www.w3.org/1999/xlink"  
+    <a xmlns:xlink="http://www.w3.org/1999/xlink"
        xlink:href="[href05]"
        target="[target05]"
        >
@@ -62,7 +63,7 @@
   </g>
 
   <g class="provincia caceres">
-    <a xmlns:xlink="http://www.w3.org/1999/xlink"  
+    <a xmlns:xlink="http://www.w3.org/1999/xlink"
        xlink:href="[href10]"
        target="[target10]"
        >
@@ -76,7 +77,7 @@
   </g>
 
   <g class="provincia toledo">
-    <a xmlns:xlink="http://www.w3.org/1999/xlink"  
+    <a xmlns:xlink="http://www.w3.org/1999/xlink"
        xlink:href="[href45]"
        target="[target45]"
        >
@@ -89,7 +90,7 @@
   </g>
 
   <g class="provincia ciudad-real">
-    <a xmlns:xlink="http://www.w3.org/1999/xlink"  
+    <a xmlns:xlink="http://www.w3.org/1999/xlink"
        xlink:href="[href13]"
        target="[target13]"
        >
@@ -102,7 +103,7 @@
   </g>
 
   <g class="provincia badajoz">
-    <a xmlns:xlink="http://www.w3.org/1999/xlink"  
+    <a xmlns:xlink="http://www.w3.org/1999/xlink"
        xlink:href="[href06]"
        target="[target06]"
        >
@@ -115,7 +116,7 @@
   </g>
 
   <g class="provincia las-palmas">
-    <a xmlns:xlink="http://www.w3.org/1999/xlink"  
+    <a xmlns:xlink="http://www.w3.org/1999/xlink"
        xlink:href="[href35]"
        target="[target35]"
        >
@@ -129,7 +130,7 @@
   </g>
 
   <g class="provincia tenerife">
-    <a xmlns:xlink="http://www.w3.org/1999/xlink"  
+    <a xmlns:xlink="http://www.w3.org/1999/xlink"
        xlink:href="[href38]"
        target="[target38]"
        >
@@ -143,7 +144,7 @@
   </g>
 
   <g class="provincia a-coruna">
-    <a xmlns:xlink="http://www.w3.org/1999/xlink"  
+    <a xmlns:xlink="http://www.w3.org/1999/xlink"
        xlink:href="[href15]"
        target="[target15]"
        >
@@ -157,7 +158,7 @@
   </g>
 
   <g class="provincia leon">
-    <a xmlns:xlink="http://www.w3.org/1999/xlink"  
+    <a xmlns:xlink="http://www.w3.org/1999/xlink"
        xlink:href="[href24]"
        target="[target24]"
        >
@@ -171,7 +172,7 @@
   </g>
 
   <g class="provincia pontevedra">
-    <a xmlns:xlink="http://www.w3.org/1999/xlink"  
+    <a xmlns:xlink="http://www.w3.org/1999/xlink"
        xlink:href="[href36]"
        target="[target36]"
        >
@@ -185,7 +186,7 @@
   </g>
 
   <g class="provincia ourense">
-    <a xmlns:xlink="http://www.w3.org/1999/xlink"  
+    <a xmlns:xlink="http://www.w3.org/1999/xlink"
        xlink:href="[href32]"
        target="[target32]"
        >
@@ -200,7 +201,7 @@
 
 
   <g class="provincia valladolid">
-    <a xmlns:xlink="http://www.w3.org/1999/xlink"  
+    <a xmlns:xlink="http://www.w3.org/1999/xlink"
        xlink:href="[href47]"
        target="[target47]"
        >
@@ -214,7 +215,7 @@
 
 
   <g class="provincia zamora">
-    <a xmlns:xlink="http://www.w3.org/1999/xlink"  
+    <a xmlns:xlink="http://www.w3.org/1999/xlink"
        xlink:href="[href49]"
        target="[target49]"
        >

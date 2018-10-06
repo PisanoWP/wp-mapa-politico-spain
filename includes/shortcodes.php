@@ -26,23 +26,19 @@
 			.provincia {
 			    fill : '.get_option('wpmps_background_provincia_color').';
 			    fill-opacity:1;
-
 			 }
 
 		  .provincia path {
 		    transition: .6s fill;
 		    fill: '.get_option('wpmps_background_provincia_color').';
-
 		    stroke:#ffffff;
 		    stroke-width:0.47999001000000002;
 		    stroke-linecap:square;
 		    stroke-miterlimit:10;
-
 		  }
 
 		  .provincia path:hover {
 		    fill: '.get_option('wpmps_hover_provincia_color').';
-
 		  }
 
 			.africa {
@@ -50,8 +46,15 @@
 				stroke:#999999;
 				stroke-width:0.90709335;
 				stroke-miterlimit:3.86369991;
-			}
-			</style>';
+			} ';
+
+			if ('S' == get_option('wpmps_show_border') ) :
+				$wpmps_styles .= ' .wp-border-img-mapa{
+															border:1px solid ' . get_option('wpmps_hover_provincia_color').';
+														} ';
+			endif;
+
+			$wpmps_styles .= '</style>';
 
 
 		$pagina_inicio = $wpmps_styles.

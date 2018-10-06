@@ -1,6 +1,4 @@
-
-
-      [title]{
+[title]{
 	position:relative;
 }
 [title]:after{
@@ -20,4 +18,10 @@
 	left:5px;
 	opacity:1;
 }
-.wp-border-img-mapa{border:1px solid #ddd}
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  /* IE10+ CSS styles go here */
+  .wpim-wrap-mapa {
+    width: 50vw;
+    height:75vh;
+  }
+}

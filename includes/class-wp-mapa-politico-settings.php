@@ -144,6 +144,32 @@ class WP_Mapa_Politico_Settings {
 				'title'					=> __( 'Configuración', WPMPS_TEXTDOMAIN ),
 				'description'			=> __( 'Configuración aspectos del plugin.', WPMPS_TEXTDOMAIN ),
 				'fields'				=> array(
+
+												array(
+														'id' 			=> 'show_border',
+														'label'			=> __( '¿Mostrar borde del mapa?', WPMPS_TEXTDOMAIN ),
+														'description'	=> false,
+														'type'			=> 'radio',
+														'default'		=> 'S',
+														'options' => array('S' => 'Mostrar',
+																							'N' => 'Ocultar'),
+												),
+												array(
+														'id' 			=> 'border_color',
+														'label'			=> __( 'Color del borde', WPMPS_TEXTDOMAIN ),
+														'description'	=> __( 'Seleccione el color del borde.', WPMPS_TEXTDOMAIN ),
+														'type'			=> 'color',
+														'default'		=> '#dddddd'
+												),
+
+												array(
+														'id' 			=> 'separador1',
+														'label'			=> false,
+														'description'	=> false,
+														'type'			=> 'separador',
+														'default'		=> false
+												),
+
 												array(
 														'id' 			=> 'background_color',
 														'label'			=> __( 'Color del fondo del mapa', WPMPS_TEXTDOMAIN ),
@@ -304,9 +330,6 @@ class WP_Mapa_Politico_Settings {
 						}
 
 					}
-
-
-
 
 				}
 				update_option( 'wpmps_plugin_mapas', $wpmps_mapas );
