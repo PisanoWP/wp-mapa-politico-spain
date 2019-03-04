@@ -3,8 +3,8 @@ Contributors: jcglp
 Tags: wordpress, plugin, map, image, spain, svg
 Donate link: https://www.paypal.me/jcglp/1.5
 Requires at least: 3.9
-Tested up to: 4.9
-Stable tag: 3.1.4
+Tested up to: 5.1
+Stable tag: 3.1.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -22,7 +22,7 @@ En la página del plugin se pueden definir los titles e hipervínculos de cada u
 
 Para instalar el plugin.
 
-1. Descarga el pluguin, descomprime el archivo y súbelo a la carpeta /wp-content/plugins/
+1. Descarga el plugin, descomprime el archivo y súbelo a la carpeta /wp-content/plugins/
 2. Activa el plugin a través del menu 'Plugins' en WordPress.
 3. Para mostrar el mapa usar el shortcode   [wpmps-map]
 
@@ -65,6 +65,10 @@ Si tienes dudas, preguntas o te da errores ponte en contacto conmigo, estaré en
 
 
 == Changelog ==
+
+= 3.1.5 =
+* Tested 5.1
+* Personalizar nombre clases css
 
 = 3.1.4 =
 * Nueva opción para decidir si mostrar o no el borde

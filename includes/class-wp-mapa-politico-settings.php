@@ -405,7 +405,7 @@ class WP_Mapa_Politico_Settings {
 
 			echo '<input name="Submit" type="submit" class="button-primary" value="' . esc_attr( __( 'Guardar cambios' , WPMPS_TEXTDOMAIN ) ) . '" />' . "\n";
 
-			echo '<table class="form-table">';
+			echo '<table class="wpmps-form-table">';
 			$this->do_settings_fields_wpms( $page, $section['id'] );
 			echo '</table>';
 		}

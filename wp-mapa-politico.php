@@ -1,7 +1,7 @@
 <?php
 /*
  * Plugin Name: WP Mapa Politico España
- * Version: 3.1.4
+ * Version: 3.1.5
  * Plugin URI: https://mispinitoswp.wordpress.com/
  * Description: Este plugin permite definir para cada una de las provincias de un mapa politico de España un enlace.
  * Author: Juan Carlos Gomez-Lobo
@@ -13,7 +13,7 @@
  */
 
 define('WPMPS_TEXTDOMAIN', 'wp-mapa-politico-spain');
-define('WPMPS_VERSION', '3.1.4');
+define('WPMPS_VERSION', '3.1.5');
 
 
 if ( ! defined( 'ABSPATH' ) ) exit;
