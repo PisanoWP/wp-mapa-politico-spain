@@ -191,6 +191,25 @@ class WP_Mapa_Politico_Settings {
 														'type'			=> 'color',
 														'default'		=> '#265a82'
 												),
+
+												array(
+														'id' 			=> 'separador2',
+														'label'			=> false,
+														'description'	=> false,
+														'type'			=> 'separador',
+														'default'		=> false
+												),
+
+												array(
+														'id' 			=> 'metodo_recuperar_svg',
+														'label'			=> __( 'Forma de recuperar la imagen', WPMPS_TEXTDOMAIN ),
+														'description'	=> 'Metodo interno para recuperar la imagen que muestra el mapa.',
+														'type'			=> 'radio',
+														'default'		=> 'curl',
+														'options' => array('curl' => 'CURL',
+																							'file' => 'FILE'),
+												),
+
 											)
 								);
 
@@ -313,15 +332,13 @@ class WP_Mapa_Politico_Settings {
 
 			$html .= ob_get_clean();
 
-
-		} else if ($tab=='mapa') {
+		} else if (substr($tab, 0, 4)==='mapa') {
 
 			if (isset($_POST['Submit'])) {
 
 				$wpmps_mapas =  get_option( 'wpmps_plugin_mapas' );
 
 				foreach ($_POST as $key => $valor){
-					error_log($key);
 					$v = explode( '-', $key);
 					if (4 == count($v) ) {
 						if ( isset( $wpmps_mapas[$v[0]][$v[1]][$v[2]][$v[3]] ) ){

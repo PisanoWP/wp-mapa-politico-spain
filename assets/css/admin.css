@@ -1,7 +1,9 @@
  .wpmps-form-table td {
 	padding: 5px 0px;
 }
-
+.wpmps-form-table th{
+  text-align: left;
+}
 .cinco-estrellas:before {
 	font-family: "dashicons";
 	color: #fddb5a;

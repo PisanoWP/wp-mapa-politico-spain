@@ -1,17 +1,19 @@
 <?php
 
-/**
- * 
- * This file runs when the plugin in uninstalled (deleted).
- * This will not run when the plugin is deactivated.
- * Ideally you will add all your clean-up scripts here
- * that will clean-up unused meta, options, etc. in the database.
- *
- */
 
 // If plugin is not being uninstalled, exit (do nothing)
 if ( ! defined( 'WP_UNINSTALL_PLUGIN' ) ) {
 	exit;
 }
 
-// Do something here if plugin is being uninstalled.
+// Al borrar el plugin limpiamos todas las opciones grabadas
+delete_option('wpmps_metodo_recuperar_svg');
+delete_option('wpmps_separador2');
+delete_option('wpmps_hover_provincia_color');
+delete_option('wpmps_background_provincia_color');
+delete_option('wpmps_background_color');
+delete_option('wpmps_separador1');
+delete_option('wpmps_border_color');
+delete_option('wpmps_show_border');
+delete_option('wpmps_version');
+delete_option('wpmps_plugin_mapas');

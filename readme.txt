@@ -4,7 +4,8 @@ Tags: wordpress, plugin, map, image, spain, svg
 Donate link: https://www.paypal.me/jcglp/1.5
 Requires at least: 3.9
 Tested up to: 5.1
-Stable tag: 3.1.5
+Requires PHP: 5.2.4
+Stable tag: 3.1.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -42,7 +43,14 @@ Pues no, el plugin solo acepta un mapa. Eso si donde pongas el shortcode saldrá
 
 = ¿Existe una versión del Plugin con las comunidades autónomas?
 
-Pues tampoco,  es posible que un futuro no muy lejano lo incluya pero no en estos momentos
+Pues tampoco, es posible que un futuro no muy lejano lo incluya pero no en estos momentos
+
+= Obtengo el ERROR NO SE HA PODIDO LOCALIZAR MAPA A MOSTRAR a insertar el mapa
+
+El plugin utiliza funciones CURL de php para recuperar la imagen. En algunas instalaciones puede no funcionar.
+Desde la versión 3.1.5 En los ajustes del plugin puedes cambiar el método de recuperar la imagen, de CURL
+a FILE, y en la mayoría de los casos problema solucionado.
+
 
 = He actualizado y no muestra el mapa, solo el shortcode [wp-political-map-spain]
 
@@ -65,6 +73,10 @@ Si tienes dudas, preguntas o te da errores ponte en contacto conmigo, estaré en
 
 
 == Changelog ==
+
+= 3.1.6 =
+* Nueva opción, Selección del método para recuperar la imagen SVG
+* Limpieza de opciones al borrar el plugin
 
 = 3.1.5 =
 * Tested 5.1
@@ -164,7 +176,6 @@ Si tienes dudas, preguntas o te da errores ponte en contacto conmigo, estaré en
 
 == Upgrade Notice ==
 
-= 3.1.4 =
-* Nueva opción para decidir si mostrar o no el borde
-* Elección del color del borde
-* css específico para IE, corrige mapa pequeño
+= 3.1.6 =
+* Nueva opción, Selección del método para recuperar la imagen SVG
+* Limpieza de opciones al borrar el plugin

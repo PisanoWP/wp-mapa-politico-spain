@@ -3,8 +3,28 @@
 	add_shortcode( 'wpmps-map', 'wpmps_show_map' );
 	function wpmps_show_map( $atts ){
 
-		$svg_url = plugins_url( 'wp-mapa-politico-spain/images/mapa_base_00.svg');
-		$resultado = wpmps_getUrlContent($svg_url);
+		$metodo =  get_option( 'wpmps_metodo_recuperar_svg' );
+
+		switch ($metodo) {
+			case 'curl':
+				$svg_url = plugins_url( 'wp-mapa-politico-spain/images/mapa_base_00.svg');
+				$resultado = wpmps_getUrlContent($svg_url);
+				break;
+
+			case 'file':
+				$svg_url = dirname(plugin_dir_path(__FILE__)) . '/images/mapa_base_00.svg';
+				$resultado = wpmps_getFileContent($svg_url);
+				break;
+
+			default:
+				// Por defecgto usamos siempre el metodo CURL
+				$svg_url = plugins_url( 'wp-mapa-politico-spain/images/mapa_base_00.svg');
+				$resultado = wpmps_getUrlContent($svg_url);
+				break;
+		}
+
+
+
 		$pagina_inicio = $resultado['imagen'];
 		if (!$pagina_inicio) {
 			$mensaje = __('ERROR NO SE HA PODIDO LOCALIZAR MAPA A MOSTRAR' ,WPMPS_TEXTDOMAIN);
@@ -48,13 +68,13 @@
 				stroke-miterlimit:3.86369991;
 			} ';
 
-			if ('S' == get_option('wpmps_show_border') ) :
-				$wpmps_styles .= ' .wp-border-img-mapa{
-															border:1px solid ' . get_option('wpmps_hover_provincia_color').';
-														} ';
-			endif;
+		if ('S' == get_option('wpmps_show_border') ) :
+			$wpmps_styles .= ' .wp-border-img-mapa{
+														border:1px solid ' . get_option('wpmps_hover_provincia_color').';
+													} ';
+		endif;
 
-			$wpmps_styles .= '</style>';
+		$wpmps_styles .= '</style>';
 
 
 		$pagina_inicio = $wpmps_styles.
@@ -68,8 +88,7 @@
 
 function wpmps_getUrlContent($url){
 	$ua = 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US) AppleWebKit/525.13 (KHTML, like Gecko) Chrome/0.A.B.C Safari/525.13';
-	//$ua = 'Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; .NET CLR 1.1.4322)';
-
+	
 	$ch = curl_init();
 	curl_setopt($ch, CURLOPT_URL, $url);
 	curl_setopt($ch, CURLOPT_USERAGENT, $ua);
@@ -84,5 +103,25 @@ function wpmps_getUrlContent($url){
 
 	return $resultado;
 
+}
+
+function wpmps_getFileContent($url){
+	try {
+	  $lineas = file($url);
+	  if ($lineas):
+	    $data = false;
+	    foreach ($lineas as $num_linea => $linea) {
+		$data .= $linea;
+	    }
+	    $resultado = array('imagen'  => $data, 'httpcode'=> 200);
+	  else:
+	    $resultado = array('imagen'  => false, 'httpcode'=> 888);
+	  endif;
+
+	} catch (Exception  $e) {
+	  $resultado = array('imagen'  => $false, 'httpcode'=> 999);
+
+	}
+	return $resultado;
 
 }

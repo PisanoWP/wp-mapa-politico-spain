@@ -230,7 +230,7 @@ class WP_Mapa_Politico_Admin_API {
 
 			case 'mapa':
 
-				$id_mapa = $data; // Default map. España
+				$id_mapa = $field['default']; // Default map. 0 España
 
 				//$opciones = WP_Mapa_Politico_Coordenadas::get_coordenadas(0);
 				$opciones =	get_option( 'wpmps_plugin_mapas' );
