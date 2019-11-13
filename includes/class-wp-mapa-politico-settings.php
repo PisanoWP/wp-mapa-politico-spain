@@ -201,6 +201,32 @@ class WP_Mapa_Politico_Settings {
 												),
 
 												array(
+														'id' 			=> 'rellenar_provincias_con_enlace',
+														'label'			=> __( '¿Colorear provincias que tienen enlace?', WPMPS_TEXTDOMAIN ),
+														'description'	=> 'Para pintar las provincias que tienen enlace con un color personalizado.',
+														'type'			=> 'radio',
+														'default'		=> 'N',
+														'options' => array('S' => 'Si',
+																							'N' => 'No'),
+												),
+
+												array(
+														'id' 			=> 'has_link_provincia_color',
+														'label'			=> __( 'Color provincia con enlace', WPMPS_TEXTDOMAIN ),
+														'description'	=> __( 'Seleccione el color de relleno en las provincias con enlace.', WPMPS_TEXTDOMAIN ),
+														'type'			=> 'color',
+														'default'		=> '#989090'
+												),
+
+												array(
+														'id' 			=> 'separador3',
+														'label'			=> false,
+														'description'	=> false,
+														'type'			=> 'separador',
+														'default'		=> false
+												),
+
+												array(
 														'id' 			=> 'metodo_recuperar_svg',
 														'label'			=> __( 'Forma de recuperar la imagen', WPMPS_TEXTDOMAIN ),
 														'description'	=> 'Metodo interno para recuperar la imagen que muestra el mapa.',
@@ -378,7 +404,6 @@ class WP_Mapa_Politico_Settings {
 			$html .= '</form>' . "\n";
 
 
-
 		} else {
 
 			$html .= '<form method="post" action="options.php" enctype="multipart/form-data">' . "\n";
@@ -418,9 +443,10 @@ class WP_Mapa_Politico_Settings {
 
 			if ( ! isset( $wp_settings_fields ) || !isset( $wp_settings_fields[$page] ) || !isset( $wp_settings_fields[$page][$section['id']] ) )
 				continue;
-
-
-			echo '<input name="Submit" type="submit" class="button-primary" value="' . esc_attr( __( 'Guardar cambios' , WPMPS_TEXTDOMAIN ) ) . '" />' . "\n";
+			
+			if ('inicio' != $section['id']):
+				echo '<input name="Submit" type="submit" class="button-primary" value="' . esc_attr( __( 'Guardar cambios' , WPMPS_TEXTDOMAIN ) ) . '" />' . "\n";
+			endif;
 
 			echo '<table class="wpmps-form-table">';
 			$this->do_settings_fields_wpms( $page, $section['id'] );

@@ -191,12 +191,24 @@ class WP_Mapa_Politico_Admin_API {
 						<li><?php printf(__('Utiliza el shortcode <strong>%s</strong> en los post o páginas donde mostrar el mapa político.', WPMPS_TEXTDOMAIN)
 														, '[wpmps-map]' ); ?> </li>
 					</ol>
-					<ul>
-						<li> <strong><?php _e('AVISO', WPMPS_TEXTDOMAIN); ?></strong><?php _e('Esta nueva versión utiliza imágenes SVG, para obtener un plugin más ligero y compatible con la mayoría de los temas.', WPMPS_TEXTDOMAIN); ?></li>
-					</ul>
-
 				</div>
-				<br />
+
+
+				<?php
+				if( class_exists( 'WP_Mapa_Politico_Comunidades' ) ): ?>
+					<h3><?php _e('Comunidades', WPMPS_TEXTDOMAIN); ?></h3>
+					<p>
+						<?php
+						printf( __('Gracias por usar el módulo de comunidades, en la pestaña de <a href="%s">comunidades</a> puedes configurar enlaces y colores.', WPMPS_TEXTDOMAIN)
+									, esc_url($url_options.'mapa_comunidades') );	?>
+					</p>
+					<p>
+						<?php
+						printf(__('Utiliza el shortcode <strong>%s</strong> en los post o páginas donde mostrar el mapa político de comunidades.', WPMPS_TEXTDOMAIN)
+									, '[wpmps-map-comunidades] ' ); ?>
+					</p>
+				<?php
+				endif; ?>
 
         <h3><?php _e('Valora el plugin', WPMPS_TEXTDOMAIN); ?> <span class="cinco-estrellas"></span></h3>
 				<p>
@@ -207,22 +219,31 @@ class WP_Mapa_Politico_Admin_API {
 				</p>
 
 
-				<h3><?php _e('Invítame a un café', WPMPS_TEXTDOMAIN); ?></h3>
-				<p><?php _e('Detrás de este plugins hay un montón de horas de trabajo, muchas de ellas nocturnas, así que ¿por qué no me invitas a un café? así podré seguir haciendo mejoras', WPMPS_TEXTDOMAIN); ?></p>
+				<div class="" style="display:flex;flex-direction:row;flex-grow:1">
 
-					<a  href="https://www.paypal.me/jcglp/1.5" title="Invitame a un café" target="_blank">
-						<img src="<?php echo plugins_url( 'wp-mapa-politico-spain/images/btn_donate_LG.gif'); ?>" alt="paypal logo">
-				 </a>
+					<div class="" style="width:40%;">
+						<h3><?php _e('Invítame a un café', WPMPS_TEXTDOMAIN); ?></h3>
+						<p><?php _e('Detrás de este plugins hay un montón de horas de trabajo, muchas de ellas nocturnas, así que ¿por qué no me invitas a un café? así podré seguir haciendo mejoras', WPMPS_TEXTDOMAIN); ?></p>
+						<p style="text-align:center;">
+							<a  href="https://www.paypal.me/jcglp/1.5" title="Invitame a un café" target="_blank" >
+								<img src="<?php echo plugins_url( 'wp-mapa-politico-spain/images/btn_donate_LG.gif'); ?>" alt="paypal logo">
+							</a>
+						</p>
 
-			 </p>
+					</div>
 
-				<h3><?php _e('Soporte', WPMPS_TEXTDOMAIN); ?></h3>
-				<p> <?php _e('¿Tienes dudas o sugerencias? Aquí tienes unos enlaces que te pueden ayudar.', WPMPS_TEXTDOMAIN); ?></p>
-				<ul>
-					<li><a target="_blank" href="https://mispinitoswp.wordpress.com/faq/"><?php _e('Preguntas frecuentes', WPMPS_TEXTDOMAIN); ?></a></li>
-					<li><a target="_blank" href="https://mispinitoswp.wordpress.com/contacto/"><?php _e('Sugerir mejoras', WPMPS_TEXTDOMAIN); ?></a></li>
-					<li><a target="_blank" href="https://wordpress.org/support/plugin/wp-mapa-politico-spain"><?php _e('Informar de un Bug', WPMPS_TEXTDOMAIN); ?></a></li>
-				</ul>
+					<div class="" style="width:40%;border-left:solid 1px black;padding-left:10px;">
+						<h3><?php _e('Soporte', WPMPS_TEXTDOMAIN); ?></h3>
+						<p> <?php _e('¿Tienes dudas o sugerencias? Aquí tienes unos enlaces que te pueden ayudar.', WPMPS_TEXTDOMAIN); ?></p>
+						<ul>							
+							<li><a target="_blank" href="https://mispinitoswp.wordpress.com/wp-mapa-politico-espana-faq/"><?php _e('Preguntas frecuentes', WPMPS_TEXTDOMAIN); ?></a></li>
+							<li><a target="_blank" href="https://mispinitoswp.wordpress.com/contacto/"><?php _e('Sugerir mejoras', WPMPS_TEXTDOMAIN); ?></a></li>
+							<li><a target="_blank" href="https://wordpress.org/support/plugin/wp-mapa-politico-spain"><?php _e('Informar de un Bug', WPMPS_TEXTDOMAIN); ?></a></li>
+						</ul>
+			 		</div>
+
+				</div>
+
 
 				<?php
 

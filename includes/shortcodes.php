@@ -31,14 +31,11 @@
 			return '<div class="error" data-url="'.$svg_url.'" data-httpcode="'.$resultado['httpcode'].'">'.$mensaje.'</div>';
 		}
 
-
 		$wpmps_mapas =  get_option( 'wpmps_plugin_mapas' );
 		$mapa = $wpmps_mapas[0];
 
 		foreach ($mapa['areas'] as $cod_area => $value){
-			$pagina_inicio = str_replace('[href'.$cod_area.']', esc_url($value['href']), $pagina_inicio);
-			$pagina_inicio = str_replace('[target'.$cod_area.']', $value['target'], $pagina_inicio);
-			$pagina_inicio = str_replace('[title'.$cod_area.']', $value['title'], $pagina_inicio);
+			$pagina_inicio = apply_filters('wpmps_establecer_links_provincias', $pagina_inicio, $cod_area, $value);
 
 		}
 
@@ -56,6 +53,10 @@
 		    stroke-linecap:square;
 		    stroke-miterlimit:10;
 		  }
+
+			.provincia .has-link path {
+				fill: '.get_option('wpmps_has_link_provincia_color').';
+			}
 
 		  .provincia path:hover {
 		    fill: '.get_option('wpmps_hover_provincia_color').';
@@ -76,6 +77,8 @@
 
 		$wpmps_styles .= '</style>';
 
+		$wpmps_styles = apply_filters('wpmps_map_provincias_style', $wpmps_styles);
+
 
 		$pagina_inicio = $wpmps_styles.
 										'<div class="wpim-wrap-mapa wp-border-img-mapa" style="background-color:'.get_option('wpmps_background_color').'">'
@@ -88,7 +91,7 @@
 
 function wpmps_getUrlContent($url){
 	$ua = 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US) AppleWebKit/525.13 (KHTML, like Gecko) Chrome/0.A.B.C Safari/525.13';
-	
+
 	$ch = curl_init();
 	curl_setopt($ch, CURLOPT_URL, $url);
 	curl_setopt($ch, CURLOPT_USERAGENT, $ua);
@@ -125,3 +128,45 @@ function wpmps_getFileContent($url){
 	return $resultado;
 
 }
+
+
+function wpmps_establecer_links_provincias($pagina_inicio, $cod_area, $value){
+
+	$class_has_link = false;
+	if ('S' == get_option('wpmps_rellenar_provincias_con_enlace') ) :
+		$class_has_link = 'has-link';
+
+	endif;
+
+	$pagina_inicio = str_replace('[href'.$cod_area.']', esc_url($value['href']), $pagina_inicio);
+
+// poner aqui esta condicion, y luego la de del get_option, para recuperar el la clses,
+// finalmente aplicar unfiltro sobre la clase.
+	if ('#'!=$value['href']):
+		$pagina_inicio = str_replace('[class'.$cod_area.']', $class_has_link, $pagina_inicio);
+
+	else:
+		$pagina_inicio = str_replace('[class'.$cod_area.']', ' ', $pagina_inicio);
+
+	endif;
+
+	$pagina_inicio = str_replace('[target'.$cod_area.']', $value['target'], $pagina_inicio);
+	$pagina_inicio = str_replace('[title'.$cod_area.']', $value['title'], $pagina_inicio);
+
+	return $pagina_inicio;
+}
+add_filter( 'wpmps_establecer_links_provincias', 'wpmps_establecer_links_provincias', 10, 3 );
+
+
+function wpmps_provincia_link( $class, $codigo ) {
+    // (maybe) modify $string
+    return $string;
+}
+add_filter( 'wpmps_provincia_link', 'wpmps_provincia_link', 10, 2 );
+
+function wpmps_map_provincias_style( $wpmps_styles ) {
+    // (maybe) modify $string
+		//return false;
+    return $wpmps_styles;
+}
+add_filter( 'wpmps_map_provincias_style', 'wpmps_map_provincias_style', 10, 2 );

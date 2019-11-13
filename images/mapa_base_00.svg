@@ -9,6 +9,7 @@
     <a xmlns:xlink="http://www.w3.org/1999/xlink"
        xlink:href="[href28]"
        target="[target28]"
+       class="[class28]"
        >
       <title>[title28]</title>
       <path
@@ -23,6 +24,7 @@
     <a xmlns:xlink="http://www.w3.org/1999/xlink"
        xlink:href="[href40]"
        target="[target40]"
+       class="[class40]"
        >
     <title>[title40]</title>
     <path
@@ -37,6 +39,7 @@
     <a xmlns:xlink="http://www.w3.org/1999/xlink"
        xlink:href="[href37]"
        target="[target37]"
+       class="[class37]"
        >
     <title>[title37]</title>
     <path
@@ -53,6 +56,7 @@
     <a xmlns:xlink="http://www.w3.org/1999/xlink"
        xlink:href="[href05]"
        target="[target05]"
+       class="[class05]"
        >
     <title>[title05]</title>
     <path
@@ -66,6 +70,7 @@
     <a xmlns:xlink="http://www.w3.org/1999/xlink"
        xlink:href="[href10]"
        target="[target10]"
+       class="[class10]"
        >
     <title>[title10]</title>
     <path
@@ -80,6 +85,7 @@
     <a xmlns:xlink="http://www.w3.org/1999/xlink"
        xlink:href="[href45]"
        target="[target45]"
+       class="[class45]"
        >
     <title>[title45]</title>
     <path
@@ -93,6 +99,7 @@
     <a xmlns:xlink="http://www.w3.org/1999/xlink"
        xlink:href="[href13]"
        target="[target13]"
+       class="[class13]"
        >
     <title>[title13]</title>
     <path
@@ -106,6 +113,7 @@
     <a xmlns:xlink="http://www.w3.org/1999/xlink"
        xlink:href="[href06]"
        target="[target06]"
+       class="[class06]"
        >
     <title>[title06]</title>
     <path
@@ -119,6 +127,7 @@
     <a xmlns:xlink="http://www.w3.org/1999/xlink"
        xlink:href="[href35]"
        target="[target35]"
+       class="[class35]"
        >
     <title>[title35]</title>
     <path
@@ -133,6 +142,7 @@
     <a xmlns:xlink="http://www.w3.org/1999/xlink"
        xlink:href="[href38]"
        target="[target38]"
+       class="[class38]"
        >
     <title>[title38]</title>
     <path
@@ -147,6 +157,7 @@
     <a xmlns:xlink="http://www.w3.org/1999/xlink"
        xlink:href="[href15]"
        target="[target15]"
+       class="[class15]"
        >
     <title>[title15]</title>
     <path
@@ -161,6 +172,7 @@
     <a xmlns:xlink="http://www.w3.org/1999/xlink"
        xlink:href="[href24]"
        target="[target24]"
+       class="[class24]"
        >
     <title>[title24]</title>
     <path
@@ -175,6 +187,7 @@
     <a xmlns:xlink="http://www.w3.org/1999/xlink"
        xlink:href="[href36]"
        target="[target36]"
+       class="[class36]"
        >
     <title>[title36]</title>
     <path
@@ -189,6 +202,7 @@
     <a xmlns:xlink="http://www.w3.org/1999/xlink"
        xlink:href="[href32]"
        target="[target32]"
+       class="[class32]"
        >
     <title>[title32]</title>
     <path
@@ -204,6 +218,7 @@
     <a xmlns:xlink="http://www.w3.org/1999/xlink"
        xlink:href="[href47]"
        target="[target47]"
+       class="[class47]"
        >
     <title>[title47]</title>
     <path
@@ -218,6 +233,7 @@
     <a xmlns:xlink="http://www.w3.org/1999/xlink"
        xlink:href="[href49]"
        target="[target49]"
+       class="[class49]"
        >
     <title>[title49]</title>
     <path
@@ -229,7 +245,11 @@
 
 
   <g class="provincia lugo">
-    <a xmlns:xlink="http://www.w3.org/1999/xlink"   xlink:href="[href27]"  target="[target27]" >
+    <a xmlns:xlink="http://www.w3.org/1999/xlink"
+      xlink:href="[href27]"
+      target="[target27]"
+      class="[class27]"
+      >
     <title>[title27]</title>
     <path
        id="path-27"
@@ -240,7 +260,7 @@
 
 
   <g class="provincia asturias">
-    <a xmlns:xlink="http://www.w3.org/1999/xlink"   xlink:href="[href33]"  target="[target33]" >
+    <a xmlns:xlink="http://www.w3.org/1999/xlink"   xlink:href="[href33]"  target="[target33]" class="[class33]" >
     <title>[title33]</title>
     <path
        id="path-33"
@@ -251,7 +271,7 @@
   </g>
 
   <g class="provincia barcelona">
-    <a xmlns:xlink="http://www.w3.org/1999/xlink"   xlink:href="[href08]"  target="[target08]" >
+    <a xmlns:xlink="http://www.w3.org/1999/xlink"   xlink:href="[href08]"  target="[target08]" class="[class08]">
     <title>[title08]</title>
     <path
        id="path-08"
@@ -262,7 +282,7 @@
   </g>
 
   <g class="provincia palencia">
-    <a xmlns:xlink="http://www.w3.org/1999/xlink"   xlink:href="[href34]"  target="[target34]" >
+    <a xmlns:xlink="http://www.w3.org/1999/xlink"   xlink:href="[href34]"  target="[target34]" class="[class34]">
     <title>[title34]</title>
     <path
        id="path-34"
@@ -272,7 +292,7 @@
   </g>
 
   <g class="provincia zaragoza">
-    <a xmlns:xlink="http://www.w3.org/1999/xlink"   xlink:href="[href50]"  target="[target50]" >
+    <a xmlns:xlink="http://www.w3.org/1999/xlink"   xlink:href="[href50]"  target="[target50]" class="[class50]">
     <title>[title50]</title>
     <path
        id="path-50"
@@ -282,7 +302,7 @@
   </g>
 
   <g class="provincia huesca">
-    <a xmlns:xlink="http://www.w3.org/1999/xlink"   xlink:href="[href22]"  target="[target22]" >
+    <a xmlns:xlink="http://www.w3.org/1999/xlink"   xlink:href="[href22]"  target="[target22]" class="[class22]">
     <title>[title22]</title>
     <path
        id="path-22"
@@ -292,7 +312,7 @@
   </g>
 
   <g class="provincia girona">
-    <a xmlns:xlink="http://www.w3.org/1999/xlink"   xlink:href="[href17]"  target="[target17]" >
+    <a xmlns:xlink="http://www.w3.org/1999/xlink"   xlink:href="[href17]"  target="[target17]" class="[class17]">
     <title>[title17]</title>
     <path
        id="path-17"
@@ -303,7 +323,7 @@
 
 
   <g class="provincia soria">
-    <a xmlns:xlink="http://www.w3.org/1999/xlink"   xlink:href="[href42]"  target="[target42]" >
+    <a xmlns:xlink="http://www.w3.org/1999/xlink"   xlink:href="[href42]"  target="[target42]" class="[class42]">
     <title>[title42]</title>
     <path
        id="path-42"
@@ -313,7 +333,7 @@
   </g>
 
   <g class="provincia lleida">
-    <a xmlns:xlink="http://www.w3.org/1999/xlink"   xlink:href="[href25]"  target="[target25]" >
+    <a xmlns:xlink="http://www.w3.org/1999/xlink"   xlink:href="[href25]"  target="[target25]" class="[class25]">
     <title>[title25]</title>
     <path
        id="path-25"
@@ -323,7 +343,7 @@
   </g>
 
   <g class="provincia illes-balears">
-    <a xmlns:xlink="http://www.w3.org/1999/xlink"   xlink:href="[href07]"  target="[target07]" >
+    <a xmlns:xlink="http://www.w3.org/1999/xlink"   xlink:href="[href07]"  target="[target07]" class="[class07]">
     <title>[title07]</title>
     <path
        id="path-07"
@@ -334,7 +354,7 @@
 
 
   <g class="provincia tarragona">
-    <a xmlns:xlink="http://www.w3.org/1999/xlink"   xlink:href="[href43]"  target="[target43]" >
+    <a xmlns:xlink="http://www.w3.org/1999/xlink"   xlink:href="[href43]"  target="[target43]" class="[class43]" >
     <title>[title43]</title>
     <path
        id="path-43"
@@ -344,7 +364,7 @@
   </g>
 
   <g class="provincia teruel">
-    <a xmlns:xlink="http://www.w3.org/1999/xlink"   xlink:href="[href44]"  target="[target44]" >
+    <a xmlns:xlink="http://www.w3.org/1999/xlink"   xlink:href="[href44]"  target="[target44]" class="[class44]" >
     <title>[title44]</title>
     <path
        id="path-44"
@@ -356,7 +376,7 @@
   </g>
 
   <g class="provincia gipuzkoa">
-    <a xmlns:xlink="http://www.w3.org/1999/xlink"   xlink:href="[href20]"  target="[target20]" >
+    <a xmlns:xlink="http://www.w3.org/1999/xlink"   xlink:href="[href20]"  target="[target20]" class="[class20]" >
     <title>[title20]</title>
     <path
        id="path-20"
@@ -367,7 +387,7 @@
 
 
   <g class="provincia cantabria">
-    <a xmlns:xlink="http://www.w3.org/1999/xlink"   xlink:href="[href39]"  target="[target39]" >
+    <a xmlns:xlink="http://www.w3.org/1999/xlink"   xlink:href="[href39]"  target="[target39]" class="[class39]" >
     <title>[title39]</title>
     <path
        id="path-39"
@@ -377,7 +397,7 @@
   </g>
 
   <g class="provincia burgos">
-    <a xmlns:xlink="http://www.w3.org/1999/xlink"   xlink:href="[href09]"  target="[target09]" >
+    <a xmlns:xlink="http://www.w3.org/1999/xlink"   xlink:href="[href09]"  target="[target09]" class="[class09]">
     <title>[title09]</title>
     <path
        id="path-09"
@@ -387,7 +407,7 @@
   </g>
 
   <g class="provincia bizkaia">
-    <a xmlns:xlink="http://www.w3.org/1999/xlink"   xlink:href="[href48]"  target="[target48]" >
+    <a xmlns:xlink="http://www.w3.org/1999/xlink"   xlink:href="[href48]"  target="[target48]" class="[class48]">
     <title>[title48]</title>
     <path
        id="path-48"
@@ -397,7 +417,7 @@
   </g>
 
   <g class="provincia la-rioja">
-    <a xmlns:xlink="http://www.w3.org/1999/xlink"   xlink:href="[href26]"  target="[target26]" >
+    <a xmlns:xlink="http://www.w3.org/1999/xlink"   xlink:href="[href26]"  target="[target26]" class="[class26]">
     <title>[title26]</title>
     <path
        id="path-26"
@@ -407,7 +427,7 @@
   </g>
 
   <g class="provincia alava">
-    <a xmlns:xlink="http://www.w3.org/1999/xlink"   xlink:href="[href01]"  target="[target01]" >
+    <a xmlns:xlink="http://www.w3.org/1999/xlink"   xlink:href="[href01]"  target="[target01]" class="[class01]">
     <title>[title01]</title>
     <path
        id="path-01"
@@ -417,7 +437,7 @@
   </g>
 
   <g class="provincia navarra">
-    <a xmlns:xlink="http://www.w3.org/1999/xlink"   xlink:href="[href31]"  target="[target31]" >
+    <a xmlns:xlink="http://www.w3.org/1999/xlink"   xlink:href="[href31]"  target="[target31]" class="[class31]">
     <title>[title31]</title>
     <path
        id="path-31"
@@ -428,7 +448,7 @@
 
 
   <g class="provincia guadalajara">
-    <a xmlns:xlink="http://www.w3.org/1999/xlink"   xlink:href="[href19]"  target="[target19]" >
+    <a xmlns:xlink="http://www.w3.org/1999/xlink"   xlink:href="[href19]"  target="[target19]" class="[class19]">
     <title>[title19]</title>
     <path
        id="path-19"
@@ -439,7 +459,7 @@
 
 
   <g class="provincia castellon">
-    <a xmlns:xlink="http://www.w3.org/1999/xlink"   xlink:href="[href12]"  target="[target12]" >
+    <a xmlns:xlink="http://www.w3.org/1999/xlink"   xlink:href="[href12]"  target="[target12]" class="[class12]" >
     <title>[title12]</title>
     <path
        id="path-12"
@@ -449,7 +469,7 @@
   </g>
 
   <g class="provincia valencia">
-    <a xmlns:xlink="http://www.w3.org/1999/xlink"   xlink:href="[href46]"  target="[target46]" >
+    <a xmlns:xlink="http://www.w3.org/1999/xlink"   xlink:href="[href46]"  target="[target46]" class="[class46]">
     <title>[title46]</title>
     <path
        id="path-46"
@@ -459,7 +479,7 @@
   </g>
 
   <g class="provincia albacete">
-    <a xmlns:xlink="http://www.w3.org/1999/xlink"   xlink:href="[href02]"  target="[target02]" >
+    <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="[href02]"  target="[target02]" class="[class02]" >
     <title>[title02]</title>
     <path
        id="path-02"
@@ -469,7 +489,7 @@
   </g>
 
   <g class="provincia murcia">
-    <a xmlns:xlink="http://www.w3.org/1999/xlink"   xlink:href="[href30]"  target="[target30]" >
+    <a xmlns:xlink="http://www.w3.org/1999/xlink"   xlink:href="[href30]"  target="[target30]" class="[class30]">
     <title>[title30]</title>
     <path
        id="path-30"
@@ -479,7 +499,7 @@
   </g>
 
   <g class="provincia cuenca">
-    <a xmlns:xlink="http://www.w3.org/1999/xlink"   xlink:href="[href16]"  target="[target16]" >
+    <a xmlns:xlink="http://www.w3.org/1999/xlink"   xlink:href="[href16]"  target="[target16]" class="[class16]">
     <title>[title16]</title>
     <path
        id="path-16"
@@ -489,7 +509,7 @@
   </g>
 
   <g class="provincia alicante">
-    <a xmlns:xlink="http://www.w3.org/1999/xlink"   xlink:href="[href03]"  target="[target03]" >
+    <a xmlns:xlink="http://www.w3.org/1999/xlink"   xlink:href="[href03]"  target="[target03]" class="[class03]">
     <title>[title03]</title>
     <path
        id="path-03"
@@ -499,7 +519,7 @@
   </g>
 
   <g class="provincia cordoba">
-    <a xmlns:xlink="http://www.w3.org/1999/xlink"   xlink:href="[href14]"  target="[target14]" >
+    <a xmlns:xlink="http://www.w3.org/1999/xlink"   xlink:href="[href14]"  target="[target14]" class="[class14]">
     <title>[title14]</title>
     <path
        id="path-14"
@@ -509,7 +529,7 @@
   </g>
 
   <g class="provincia jaen">
-    <a xmlns:xlink="http://www.w3.org/1999/xlink"   xlink:href="[href23]"  target="[target23]" >
+    <a xmlns:xlink="http://www.w3.org/1999/xlink"   xlink:href="[href23]"  target="[target23]" class="[class23]" >
     <title>[title23]</title>
     <path
        id="path-23"
@@ -519,7 +539,7 @@
   </g>
 
   <g class="provincia huelva">
-    <a xmlns:xlink="http://www.w3.org/1999/xlink"   xlink:href="[href21]"  target="[target21]" >
+    <a xmlns:xlink="http://www.w3.org/1999/xlink"   xlink:href="[href21]"  target="[target21]" class="[class21]">
     <title>[title21]</title>
     <path
        id="path-21"
@@ -529,7 +549,7 @@
   </g>
 
   <g class="provincia sevilla">
-    <a xmlns:xlink="http://www.w3.org/1999/xlink"   xlink:href="[href41]"  target="[target41]" >
+    <a xmlns:xlink="http://www.w3.org/1999/xlink"   xlink:href="[href41]"  target="[target41]" class="[class41]">
     <title>[title41]</title>
     <path
        id="path-41"
@@ -539,7 +559,7 @@
   </g>
 
   <g class="provincia granada">
-    <a xmlns:xlink="http://www.w3.org/1999/xlink"   xlink:href="[href18]"  target="[target18]" >
+    <a xmlns:xlink="http://www.w3.org/1999/xlink"   xlink:href="[href18]"  target="[target18]" class="[class18]">
     <title>[title18]</title>
     <path
        id="path-18"
@@ -549,7 +569,7 @@
   </g>
 
   <g class="provincia almeria">
-    <a xmlns:xlink="http://www.w3.org/1999/xlink"   xlink:href="[href04]"  target="[target04]" >
+    <a xmlns:xlink="http://www.w3.org/1999/xlink"   xlink:href="[href04]"  target="[target04]" class="[class04]">
     <title>[title04]</title>
     <path
        id="path-04"
@@ -559,7 +579,7 @@
   </g>
 
   <g class="provincia malaga">
-    <a xmlns:xlink="http://www.w3.org/1999/xlink"   xlink:href="[href29]"  target="[target29]" >
+    <a xmlns:xlink="http://www.w3.org/1999/xlink"   xlink:href="[href29]"  target="[target29]" class="[class29]" >
     <title>[title29]</title>
     <path
        id="path-29"
@@ -569,7 +589,7 @@
   </g>
 
   <g class="provincia cadiz">
-    <a xmlns:xlink="http://www.w3.org/1999/xlink"   xlink:href="[href11]"  target="[target11]" >
+    <a xmlns:xlink="http://www.w3.org/1999/xlink"   xlink:href="[href11]"  target="[target11]" class="[class11]">
     <title>[title11]</title>
     <path
        id="path-11"
@@ -598,7 +618,7 @@
 
 
   <g class="provincia ceuta">
-    <a xmlns:xlink="http://www.w3.org/1999/xlink"   xlink:href="[href51]"  target="[target51]" >
+    <a xmlns:xlink="http://www.w3.org/1999/xlink"   xlink:href="[href51]"  target="[target51]" class="[class51]">
     <title>[title51]</title>
 
       <path
@@ -612,7 +632,7 @@
 
 
   <g class="provincia melilla">
-    <a xmlns:xlink="http://www.w3.org/1999/xlink"   xlink:href="[href52]"  target="[target52]" >
+    <a xmlns:xlink="http://www.w3.org/1999/xlink"   xlink:href="[href52]"  target="[target52]" class="[class52]">
     <title>[title52]</title>
     <path
         id="path-52"

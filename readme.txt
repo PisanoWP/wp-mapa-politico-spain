@@ -3,9 +3,9 @@ Contributors: jcglp
 Tags: wordpress, plugin, map, image, spain, svg
 Donate link: https://www.paypal.me/jcglp/1.5
 Requires at least: 3.9
-Tested up to: 5.1
+Tested up to: 5.3
 Requires PHP: 5.2.4
-Stable tag: 3.1.6
+Stable tag: 3.2.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -41,10 +41,6 @@ O bien, desde el panel de control de WordPress
 
 Pues no, el plugin solo acepta un mapa. Eso si donde pongas el shortcode saldrá una mapa.
 
-= ¿Existe una versión del Plugin con las comunidades autónomas?
-
-Pues tampoco, es posible que un futuro no muy lejano lo incluya pero no en estos momentos
-
 = Obtengo el ERROR NO SE HA PODIDO LOCALIZAR MAPA A MOSTRAR a insertar el mapa
 
 El plugin utiliza funciones CURL de php para recuperar la imagen. En algunas instalaciones puede no funcionar.
@@ -73,6 +69,9 @@ Si tienes dudas, preguntas o te da errores ponte en contacto conmigo, estaré en
 
 
 == Changelog ==
+
+= 3.2.0 =
+* Nueva opción, Rellenar las provincias que tienen enlace con otro color
 
 = 3.1.6 =
 * Nueva opción, Selección del método para recuperar la imagen SVG
@@ -176,6 +175,5 @@ Si tienes dudas, preguntas o te da errores ponte en contacto conmigo, estaré en
 
 == Upgrade Notice ==
 
-= 3.1.6 =
-* Nueva opción, Selección del método para recuperar la imagen SVG
-* Limpieza de opciones al borrar el plugin
+= 3.2.0 =
+* Nueva opción, Rellenar provincias que tienen enlace con otro color
