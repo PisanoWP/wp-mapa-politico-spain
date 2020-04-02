@@ -3,9 +3,9 @@ Contributors: jcglp
 Tags: wordpress, plugin, map, image, spain, svg
 Donate link: https://www.paypal.me/jcglp/1.5
 Requires at least: 3.9
-Tested up to: 5.3
+Tested up to: 5.4
 Requires PHP: 5.2.4
-Stable tag: 3.2.0
+Stable tag: 3.2.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -69,6 +69,10 @@ Si tienes dudas, preguntas o te da errores ponte en contacto conmigo, estaré en
 
 
 == Changelog ==
+
+= 3.2.1 =
+* Tested 5.4
+* Prueba de vida. Aún hay alguien detrás del plugin
 
 = 3.2.0 =
 * Nueva opción, Rellenar las provincias que tienen enlace con otro color
@@ -175,5 +179,6 @@ Si tienes dudas, preguntas o te da errores ponte en contacto conmigo, estaré en
 
 == Upgrade Notice ==
 
-= 3.2.0 =
-* Nueva opción, Rellenar provincias que tienen enlace con otro color
+= 3.2.1 =
+* Tested 5.4
+* Prueba de vida. Aún hay alguien detrás del plugin
