@@ -5,7 +5,7 @@ Donate link: https://www.paypal.me/jcglp/1.5
 Requires at least: 3.9
 Tested up to: 5.4
 Requires PHP: 5.2.4
-Stable tag: 3.2.1
+Stable tag: 3.5.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -56,19 +56,27 @@ Sustituye por el nuevo shortode  [wpmps-map] y listo.
 
 = ¿Existe una versión Premium del plugin?
 
-Pues no, lo que se ve es lo que hay, pero vamos si quieres me puedes invitar a un café desde el botón de donación.
+Pues no, lo que se ve es lo que hay, pero vamos si quieres me puedes invitar a un café desde el [botón de donación](https://www.paypal.me/jcglp/1.5).
 
 Si tienes dudas, preguntas o te da errores ponte en contacto conmigo, estaré encantado de ayudarte jcglp@yahoo.es
 
 
+= ¿Existe una versión del mapa solo de comunidades?
+
+Te recomiendo que eches un vistazo a [Plugin Mapa Comunidades](https://mispinitoswp.wordpress.com/2020/04/29/mapa-por-comunidades/)
+
 
 == Screenshots ==
 
-1.  Pagina del plugin para definir los hipervinculos sobre cada provincia
-2.	Mapa en una página
+1.  Página del plugin para definir los hipervinculos sobre cada provincia
+2.  Configruación de colores
+3.  Mapa en una página
 
 
 == Changelog ==
+
+= 3.5.0 =
+* Esta nueva versión del plugin utiliza una nueva imagen para el mapa de España, con los elementos más compactos, más visibilidad para las ciudades autónomas de Ceuta y Melilla, así como los países cercanos.
 
 = 3.2.1 =
 * Tested 5.4
@@ -179,6 +187,5 @@ Si tienes dudas, preguntas o te da errores ponte en contacto conmigo, estaré en
 
 == Upgrade Notice ==
 
-= 3.2.1 =
-* Tested 5.4
-* Prueba de vida. Aún hay alguien detrás del plugin
+= 3.5.0 =
+* Esta nueva versión del plugin utiliza una nueva imagen para el mapa de España, con los elementos más compactos, más visibilidad para las ciudades autónomas de Ceuta y Melilla, así como los países cercanos.

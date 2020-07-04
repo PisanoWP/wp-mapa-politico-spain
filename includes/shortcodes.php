@@ -3,22 +3,24 @@
 	add_shortcode( 'wpmps-map', 'wpmps_show_map' );
 	function wpmps_show_map( $atts ){
 
+		$wpmps_imagen = apply_filters('wpmps_imagen_mapa_provincias', 'mapa_base_00V2.svg');
+
 		$metodo =  get_option( 'wpmps_metodo_recuperar_svg' );
 
 		switch ($metodo) {
 			case 'curl':
-				$svg_url = plugins_url( 'wp-mapa-politico-spain/images/mapa_base_00.svg');
+				$svg_url = plugins_url( 'wp-mapa-politico-spain/images/'.$wpmps_imagen);
 				$resultado = wpmps_getUrlContent($svg_url);
 				break;
 
 			case 'file':
-				$svg_url = dirname(plugin_dir_path(__FILE__)) . '/images/mapa_base_00.svg';
+				$svg_url = dirname(plugin_dir_path(__FILE__)) . '/images/' . $wpmps_imagen;
 				$resultado = wpmps_getFileContent($svg_url);
 				break;
 
 			default:
 				// Por defecgto usamos siempre el metodo CURL
-				$svg_url = plugins_url( 'wp-mapa-politico-spain/images/mapa_base_00.svg');
+				$svg_url = plugins_url( 'wp-mapa-politico-spain/images/' . $imagen );
 				$resultado = wpmps_getUrlContent($svg_url);
 				break;
 		}
@@ -45,7 +47,7 @@
 			    fill-opacity:1;
 			 }
 
-		  .provincia path {
+		  .provincia path, .provincia ellipse {
 		    transition: .6s fill;
 		    fill: '.get_option('wpmps_background_provincia_color').';
 		    stroke:#ffffff;
@@ -54,20 +56,13 @@
 		    stroke-miterlimit:10;
 		  }
 
-			.provincia .has-link path {
+			.provincia .has-link path, .provincia .has-link ellipse {
 				fill: '.get_option('wpmps_has_link_provincia_color').';
 			}
 
-		  .provincia path:hover {
+		  .provincia path:hover, .provincia ellipse:hover {
 		    fill: '.get_option('wpmps_hover_provincia_color').';
-		  }
-
-			.africa {
-				fill:#f4e2ba;
-				stroke:#999999;
-				stroke-width:0.90709335;
-				stroke-miterlimit:3.86369991;
-			} ';
+		  } ';
 
 		if ('S' == get_option('wpmps_show_border') ) :
 			$wpmps_styles .= ' .wp-border-img-mapa{
@@ -138,10 +133,8 @@ function wpmps_establecer_links_provincias($pagina_inicio, $cod_area, $value){
 
 	endif;
 
-	$pagina_inicio = str_replace('[href'.$cod_area.']', esc_url($value['href']), $pagina_inicio);
+	$pagina_inicio = str_replace('[href'.$cod_area.']', esc_url($value['href']) , $pagina_inicio);
 
-// poner aqui esta condicion, y luego la de del get_option, para recuperar el la clses,
-// finalmente aplicar unfiltro sobre la clase.
 	if ('#'!=$value['href']):
 		$pagina_inicio = str_replace('[class'.$cod_area.']', $class_has_link, $pagina_inicio);
 
@@ -169,4 +162,3 @@ function wpmps_map_provincias_style( $wpmps_styles ) {
 		//return false;
     return $wpmps_styles;
 }
-add_filter( 'wpmps_map_provincias_style', 'wpmps_map_provincias_style', 10, 2 );
