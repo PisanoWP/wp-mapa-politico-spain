@@ -42,6 +42,10 @@
 		}
 
 		$wpmps_styles = '<style>
+			.wpmps-background-mar{
+				fill : '.get_option('wpmps_background_color').';
+				fill-opacity:1;
+			}
 			.provincia {
 			    fill : '.get_option('wpmps_background_provincia_color').';
 			    fill-opacity:1;

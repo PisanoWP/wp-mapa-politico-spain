@@ -8,7 +8,7 @@
 
 
 <!-- Mar -->
-<path d="M 0,0.038 H1183.41 V1015.2 H0 z"  style="fill:#c6ecff" />
+<path d="M 0,0.038 H1183.41 V1015.2 H0 z"  class="wpmps-background-mar" />
 
 <g style="fill:#fefee9" >
 

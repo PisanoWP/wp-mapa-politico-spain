@@ -3,9 +3,9 @@ Contributors: jcglp
 Tags: wordpress, plugin, map, image, spain, svg
 Donate link: https://www.paypal.me/jcglp/1.5
 Requires at least: 3.9
-Tested up to: 5.4
+Tested up to: 5.5
 Requires PHP: 5.2.4
-Stable tag: 3.5.0
+Stable tag: 3.5.1 
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -74,6 +74,10 @@ Te recomiendo que eches un vistazo a [Plugin Mapa Comunidades](https://mispinito
 
 
 == Changelog ==
+
+= 3.5.1 =
+* Arreglar cambio color fondo del mapa, que había dejado de funcionar en la ver. anterior.
+* Tested 5.5
 
 = 3.5.0 =
 * Esta nueva versión del plugin utiliza una nueva imagen para el mapa de España, con los elementos más compactos, más visibilidad para las ciudades autónomas de Ceuta y Melilla, así como los países cercanos.
@@ -187,5 +191,6 @@ Te recomiendo que eches un vistazo a [Plugin Mapa Comunidades](https://mispinito
 
 == Upgrade Notice ==
 
-= 3.5.0 =
-* Esta nueva versión del plugin utiliza una nueva imagen para el mapa de España, con los elementos más compactos, más visibilidad para las ciudades autónomas de Ceuta y Melilla, así como los países cercanos.
+= 3.5.1 =
+* Arreglar cambio color fondo del mapa, que había dejado de funcionar en la ver. anterior.
+* Tested 5.5
