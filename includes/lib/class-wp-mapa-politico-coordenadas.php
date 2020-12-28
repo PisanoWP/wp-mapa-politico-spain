@@ -504,23 +504,13 @@ class WP_Mapa_Politico_Coordenadas {
 		$mapas =  get_option( 'wpmps_plugin_mapas' );
 
 		if (!$mapas) {
-			// No existe ningún mapa, vamos a comprobar si existe
-			// una versión previa del plugin y sino se recuperan
-			// un mapa por defecto.
-
-
-			if (!$mapas) {
-				$mapas = WP_Mapa_Politico_Coordenadas::get_default_map();
-
-			}
-
+			// No existe ningún mapa
+			$mapas = WP_Mapa_Politico_Coordenadas::get_default_map();			
 			update_option( 'wpmps_plugin_mapas', $mapas );
 
 		}
 
-
-
-	}
+	} // END set_default_map()
 
 	
 }

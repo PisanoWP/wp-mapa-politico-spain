@@ -462,12 +462,10 @@
 </g>
 
 
-
-
 <path
-  id="Frame"
+  id="wpmps-frame-islas-canarias"
   d="m742.28 813.09h432v191h-432z"
-  style="fill:#c6ecff;stroke:#646464;stroke-width:4" />
+  class="wpmps-background-mar"/>
 
   <g class="provincia tenerife" >
     <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="[href38]"  target="[target38]"  class="[class38]" >

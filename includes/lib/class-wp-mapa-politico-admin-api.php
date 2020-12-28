@@ -155,17 +155,6 @@ class WP_Mapa_Politico_Admin_API {
 				$html .= '</select> ';
 			break;
 
-			case 'image':
-				$image_thumb = '';
-				if ( $data ) {
-					$image_thumb = wp_get_attachment_thumb_url( $data );
-				}
-				$html .= '<img id="' . $option_name . '_preview" class="image_preview" src="' . $image_thumb . '" /><br/>' . "\n";
-				$html .= '<input id="' . $option_name . '_button" type="button" data-uploader_title="' . __( 'Subir una imagen' , WPMPS_TEXTDOMAIN ) . '" data-uploader_button_text="' . __( 'Usar imagen' , WPMPS_TEXTDOMAIN ) . '" class="image_upload_button button" value="'. __( 'Subir nueva imagen' , WPMPS_TEXTDOMAIN ) . '" />' . "\n";
-				$html .= '<input id="' . $option_name . '_delete" type="button" class="image_delete_button button" value="'. __( 'Borrar imagen' , WPMPS_TEXTDOMAIN ) . '" />' . "\n";
-				$html .= '<input id="' . $option_name . '" class="image_data_field" type="hidden" name="' . $option_name . '" value="' . $data . '"/><br/>' . "\n";
-			break;
-
 			case 'color':
 				?><div class="color-picker" style="position:relative;">
 			        <input type="text" name="<?php esc_attr_e( $option_name ); ?>" class="color" value="<?php esc_attr_e( $data ); ?>" />
@@ -195,20 +184,9 @@ class WP_Mapa_Politico_Admin_API {
 
 
 				<?php
-				if( class_exists( 'WP_Mapa_Politico_Comunidades' ) ): ?>
-					<h3><?php _e('Comunidades', WPMPS_TEXTDOMAIN); ?></h3>
-					<p>
-						<?php
-						printf( __('Gracias por usar el módulo de comunidades, en la pestaña de <a href="%s">comunidades</a> puedes configurar enlaces y colores.', WPMPS_TEXTDOMAIN)
-									, esc_url($url_options.'mapa_comunidades') );	?>
-					</p>
-					<p>
-						<?php
-						printf(__('Utiliza el shortcode <strong>%s</strong> en los post o páginas donde mostrar el mapa político de comunidades.', WPMPS_TEXTDOMAIN)
-									, '[wpmps-map-comunidades] ' ); ?>
-					</p>
-				<?php
-				endif; ?>
+				$modules_info = false;
+				echo apply_filters('wpms_modules_info', $modules_info); ?>
+				
 
         <h3><?php _e('Valora el plugin', WPMPS_TEXTDOMAIN); ?> <span class="cinco-estrellas"></span></h3>
 				<p>

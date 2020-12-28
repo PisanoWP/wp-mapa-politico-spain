@@ -66,7 +66,13 @@
 
 		  .provincia path:hover, .provincia ellipse:hover {
 		    fill: '.get_option('wpmps_hover_provincia_color').';
-		  } ';
+			} 
+
+			#wpmps-frame-islas-canarias{
+				stroke:#646464;
+				stroke-width:4;
+			}';
+						
 
 		if ('S' == get_option('wpmps_show_border') ) :
 			$wpmps_styles .= ' .wp-border-img-mapa{
