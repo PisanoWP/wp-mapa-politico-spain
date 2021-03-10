@@ -92,13 +92,9 @@ class WP_Mapa_Politico {
 		$this->assets_dir = trailingslashit( $this->dir ) . 'assets';
 		$this->assets_url = esc_url( trailingslashit( plugins_url( '/assets/', $this->file ) ) );
 
-		$this->script_suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
+		$this->script_suffix =  WPMPS_SCRIPT_DEBUG ? '' : '.min';
 
 		register_activation_hook( $this->file, array( $this, 'install' ) );
-
-		// Load frontend JS & CSS
-		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_styles' ), 10 );
-		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ), 10 );
 
 		// Load admin JS & CSS
 		add_action( 'admin_enqueue_scripts', array( $this, 'admin_enqueue_scripts' ), 10, 1 );
@@ -121,31 +117,6 @@ class WP_Mapa_Politico {
 	} // End __construct ()
 
 
-
-	/**
-	 * Load frontend CSS.
-	 * @access  public
-	 * @since   1.0.0
-	 * @return void
-	 */
-	public function enqueue_styles () {
-		wp_register_style( $this->_token . '-frontend', esc_url( $this->assets_url ) . 'css/frontend' . $this->script_suffix . '.css', array(), $this->_version );
-		wp_enqueue_style( $this->_token . '-frontend' );
-	} // End enqueue_styles ()
-
-	/**
-	 * Load frontend Javascript.
-	 * @access  public
-	 * @since   1.0.0
-	 * @return  void
-	 */
-	public function enqueue_scripts () {
-
-
-
-
-	} // End enqueue_scripts ()
-
 	public function donate_link($links, $file) {
 	    if ( dirname( $file ) == plugin_basename($this->dir) ) {
 					$links[] = '<a href="https://www.paypal.me/jcglp/1.5" target="_blank">' . __('Donar', WPMPS_TEXTDOMAIN) . '</a>';
@@ -153,7 +124,6 @@ class WP_Mapa_Politico {
 
 	    return $links;
 	} // donate_link()
-
 
 
 	/**
@@ -166,8 +136,8 @@ class WP_Mapa_Politico {
 		wp_register_style( $this->_token . '-admin', esc_url( $this->assets_url ) . 'css/admin.css', array(), $this->_version );
 		wp_register_style( $this->_token . '-admin', get_stylesheet_uri(), array( 'dashicons' ), array(), $this->_version );
 
-
 		wp_enqueue_style( $this->_token . '-admin' );
+
 	} // End admin_enqueue_styles ()
 
 	/**
@@ -180,7 +150,6 @@ class WP_Mapa_Politico {
 		wp_register_script( $this->_token . '-admin', esc_url( $this->assets_url ) . 'js/admin' . $this->script_suffix . '.js', array( 'jquery' ), $this->_version );
 		wp_enqueue_script( $this->_token . '-admin' );
 	} // End admin_enqueue_scripts ()
-
 
 
 	/**

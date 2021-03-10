@@ -3,9 +3,9 @@ Contributors: jcglp
 Tags: wordpress, plugin, map, image, spain, svg
 Donate link: https://www.paypal.me/jcglp/1.5
 Requires at least: 4.6
-Tested up to: 5.6
+Tested up to: 5.7
 Requires PHP: 5.2.4
-Stable tag: 3.6.0
+Stable tag: 3.6.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -74,6 +74,10 @@ Te recomiendo que eches un vistazo a [Plugin Mapa Comunidades](https://mispinito
 
 
 == Changelog ==
+= 3.6.2 =
+* Limpieza codigo, quitar estilos redundadntes
+* Tested 5.7
+
 = 3.6.0 =
 * Rellenar cuadrado de islas canarias con el mismo fondo que el resto del mapa
 * Tested 5.6
@@ -194,6 +198,6 @@ Te recomiendo que eches un vistazo a [Plugin Mapa Comunidades](https://mispinito
 
 == Upgrade Notice ==
 
-= 3.6.0 =
-* Rellenar cuadrado de islas canarias con el mismo fondo que el resto del mapa
-* Tested 5.6
+= 3.6.2 =
+* Limpieza codigo, quitar estilos redundadntes
+* Tested 5.7
