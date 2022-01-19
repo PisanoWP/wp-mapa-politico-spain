@@ -119,7 +119,7 @@ class WP_Mapa_Politico {
 
 	public function donate_link($links, $file) {
 	    if ( dirname( $file ) == plugin_basename($this->dir) ) {
-					$links[] = '<a href="https://www.paypal.me/jcglp/1.5" target="_blank">' . __('Donar', WPMPS_TEXTDOMAIN) . '</a>';
+					$links[] = '<a href="https://www.paypal.me/jcglp/1.5" target="_blank">' . __('Donar', 'wp-mapa-politico-spain') . '</a>';
 	    }
 
 	    return $links;
@@ -160,11 +160,11 @@ class WP_Mapa_Politico {
 	 */
 	public function load_plugin_textdomain () {
 
-	    $locale = apply_filters( 'plugin_locale', get_locale(), WPMPS_TEXTDOMAIN );
+	    $locale = apply_filters( 'plugin_locale', get_locale(), 'wp-mapa-politico-spain' );
 
-	    load_textdomain( WPMPS_TEXTDOMAIN, WP_LANG_DIR . '/' . WPMPS_TEXTDOMAIN . '/' . WPMPS_TEXTDOMAIN . '-' . $locale . '.mo' );
+	    load_textdomain( 'wp-mapa-politico-spain', WP_LANG_DIR . '/' . 'wp-mapa-politico-spain' . '/' . 'wp-mapa-politico-spain' . '-' . $locale . '.mo' );
 
-	    load_plugin_textdomain( WPMPS_TEXTDOMAIN, false, dirname( plugin_basename( $this->file ) ) . '/lang/' );
+	    load_plugin_textdomain( 'wp-mapa-politico-spain', false, dirname( plugin_basename( $this->file ) ) . '/lang/' );
 
 	} // End load_plugin_textdomain ()
 
@@ -213,6 +213,22 @@ class WP_Mapa_Politico {
 
 		WP_Mapa_Politico_Coordenadas::set_default_map();
 		$this->_log_version_number();
+
+		// Valores por defecto configuración
+		update_option( $this->_token . '_show_border', 'S');
+		update_option( $this->_token . '_border_color', '#989898');
+
+		update_option( $this->_token . '_background_color', '#dde6da');
+		update_option( $this->_token . '_background_provincia_color', '#8098a8');
+
+		update_option( $this->_token . '_hover_provincia_color', '#265a82');
+
+		update_option( $this->_token . '_rellenar_provincias_con_enlace', 'N');
+		update_option( $this->_token . '_has_link_provincia_color', '#989090');
+
+		update_option( $this->_token . '_metodo_recuperar_svg', 'curl' );
+
+
 	} // End install ()
 
 	/**

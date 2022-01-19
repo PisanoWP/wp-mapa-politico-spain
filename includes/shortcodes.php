@@ -9,18 +9,18 @@
 
 		switch ($metodo) {
 			case 'curl':
-				$svg_url = plugins_url( 'wp-mapa-politico-spain/images/'.$wpmps_imagen);
+				$svg_url = WPMPS_URL . '/images/' . $wpmps_imagen;
 				$resultado = wpmps_getUrlContent($svg_url);
 				break;
 
 			case 'file':
-				$svg_url = dirname(plugin_dir_path(__FILE__)) . '/images/' . $wpmps_imagen;
+				$svg_url = WPMPS_PATH . '/images/' . $wpmps_imagen;
 				$resultado = wpmps_getFileContent($svg_url);
 				break;
 
 			default:
-				// Por defecgto usamos siempre el metodo CURL
-				$svg_url = plugins_url( 'wp-mapa-politico-spain/images/' . $imagen );
+				// Por defecto usamos siempre el metodo CURL
+				$svg_url = WPMPS_URL . '/images/' . $wpmps_imagen;
 				$resultado = wpmps_getUrlContent($svg_url);
 				break;
 		}
@@ -29,8 +29,8 @@
 
 		$pagina_inicio = $resultado['imagen'];
 		if (!$pagina_inicio) {
-			$mensaje = __('ERROR NO SE HA PODIDO LOCALIZAR MAPA A MOSTRAR' ,WPMPS_TEXTDOMAIN);
-			return '<div class="error" data-url="'.$svg_url.'" data-httpcode="'.$resultado['httpcode'].'">'.$mensaje.'</div>';
+			$mensaje = __('ERROR NO SE HA PODIDO LOCALIZAR MAPA A MOSTRAR' ,'wp-mapa-politico-spain');
+			return '<div class="error" data-url="'.esc_attr($svg_url).'" data-httpcode="'.esc_attr($resultado['httpcode']).'">'.esc_html($mensaje).'</div>';
 		}
 
 		$wpmps_mapas =  get_option( 'wpmps_plugin_mapas' );
@@ -38,22 +38,37 @@
 
 		foreach ($mapa['areas'] as $cod_area => $value){
 			$pagina_inicio = apply_filters('wpmps_establecer_links_provincias', $pagina_inicio, $cod_area, $value);
+		} ?>
 
-		}
+		<?php
+		$wpmps_styles = array();
+		$wpmps_styles['border_color'] 							= get_option('wpmps_border_color');
+		$wpmps_styles['background_color'] 					= get_option('wpmps_background_color');
+		$wpmps_styles['background_provincia_color'] = get_option('wpmps_background_provincia_color');
+		$wpmps_styles['has_link_provincia_color'] 	= get_option('wpmps_has_link_provincia_color');
+		$wpmps_styles['hover_provincia_color'] 			= get_option('wpmps_hover_provincia_color');
+		$wpmps_styles = apply_filters('wpmps_map_provincias_style', $wpmps_styles); ?>
 
-		$wpmps_styles = '<style>
+		<?php
+		ob_start(); ?>
+
+		<style>
 			.wpmps-background-mar{
-				fill : '.get_option('wpmps_background_color').';
+				fill : <?php echo esc_attr($wpmps_styles['background_color']); ?>;
 				fill-opacity:1;
 			}
+			.pais{
+				fill:#e0e0e0;
+				stroke-width:2.5;
+				stroke:#646464;
+			}
 			.provincia {
-			    fill : '.get_option('wpmps_background_provincia_color').';
+			    fill : <?php echo esc_attr($wpmps_styles['background_provincia_color']); ?>;
 			    fill-opacity:1;
 			 }
-
 		  .provincia path, .provincia ellipse {
 		    transition: .6s fill;
-		    fill: '.get_option('wpmps_background_provincia_color').';
+		    fill: <?php echo esc_attr($wpmps_styles['background_provincia_color']); ?>;
 		    stroke:#ffffff;
 		    stroke-width:0.47999001000000002;
 		    stroke-linecap:square;
@@ -61,36 +76,63 @@
 		  }
 
 			.provincia .has-link path, .provincia .has-link ellipse {
-				fill: '.get_option('wpmps_has_link_provincia_color').';
+				fill: <?php echo esc_attr($wpmps_styles['has_link_provincia_color']); ?>;
 			}
 
 		  .provincia path:hover, .provincia ellipse:hover {
-		    fill: '.get_option('wpmps_hover_provincia_color').';
-			} 
+				fill: <?php echo esc_attr($wpmps_styles['hover_provincia_color']); ?>;
+			}
 
 			#wpmps-frame-islas-canarias{
 				stroke:#646464;
 				stroke-width:4;
-			}';
-						
+			}
+			<?php
+			if ('S' == get_option('wpmps_show_border') ) : ?>
+				.wp-border-img-mapa{
+					border:1px solid <?php echo esc_attr($wpmps_styles['border_color']); ?>;
+				}
+			<?php
+			endif; ?>
 
-		if ('S' == get_option('wpmps_show_border') ) :
-			$wpmps_styles .= ' .wp-border-img-mapa{
-														border:1px solid ' . get_option('wpmps_hover_provincia_color').';
-													} ';
-		endif;
+		</style>
 
-		$wpmps_styles .= '</style>';
+		<div class="wpim-wrap-mapa wp-border-img-mapa"
+				 style="background-color:<?php echo esc_attr($wpmps_styles['background_color']); ?>">
+				 <?php
+				 $arr = array( 'svg' => array('version'=>array(),
+   	 																	'viewbox'=>array(),
+   																		'id'=>array(),
+																			'class'=>array(),
+																			'preserveaspectratio'=>array(),
+																		),
+												'g' => array( 'class'=> array(),
+																	),
+				 								'path' => array('id' => array()
+																			, 'class' =>array()
+																			, 'd' => array()
+																			),
+												'title' => array(),
+												'ellipse' => array( 'id' => array()
+																					,	'cx' => array()
+																					, 'cy' => array()
+																					,	'rx' => array()
+																					,	'ry' => array()
+																				),
+												 'a' => array ('xmlns:xlink'=> array()
+												 						,	 'xlink:href'=> array()
+																		,	 'target' => array()
+																		,	 'id'=>array()
+																		,	 'class'=>array()
+																				),
+																	);
+				echo wp_kses( $pagina_inicio, $arr ); ?>
 
-		$wpmps_styles = apply_filters('wpmps_map_provincias_style', $wpmps_styles);
+		</div>
 
-
-		$pagina_inicio = $wpmps_styles.
-										'<div class="wpim-wrap-mapa wp-border-img-mapa" style="background-color:'.get_option('wpmps_background_color').'">'
-											.$pagina_inicio
-									. '</div>';
-		return $pagina_inicio;
-
+		<?php
+	  return ob_get_clean();
+		
 	}
 
 
@@ -145,11 +187,12 @@ function wpmps_establecer_links_provincias($pagina_inicio, $cod_area, $value){
 
 	$pagina_inicio = str_replace('[href'.$cod_area.']', esc_url($value['href']) , $pagina_inicio);
 
-	if ('#'!=$value['href']):
-		$pagina_inicio = str_replace('[class'.$cod_area.']', $class_has_link, $pagina_inicio);
-
-	else:
+	if (empty($value['href']) || ('#'==$value['href'])):
 		$pagina_inicio = str_replace('[class'.$cod_area.']', ' ', $pagina_inicio);
+	else:
+		// El area tiene un enlace
+		$pagina_inicio = str_replace('[class'.$cod_area.']', esc_attr($class_has_link), $pagina_inicio);
+
 
 	endif;
 
@@ -167,8 +210,29 @@ function wpmps_provincia_link( $class, $codigo ) {
 }
 add_filter( 'wpmps_provincia_link', 'wpmps_provincia_link', 10, 2 );
 
+
+add_filter( 'wpmps_map_provincias_style', 'wpmps_map_provincias_style', 10, 1 );
 function wpmps_map_provincias_style( $wpmps_styles ) {
-    // (maybe) modify $string
-		//return false;
-    return $wpmps_styles;
+
+	if (empty($wpmps_styles['border_color'])):
+		$wpmps_styles['border_color'] = '#989898';
+	endif;
+
+	if (empty($wpmps_styles['background_color'])):
+		$wpmps_styles['background_color'] = '#dde6da';
+	endif;
+
+	if (empty($wpmps_styles['background_provincia_color'])):
+		$wpmps_styles['background_provincia_color'] = '#8098a8';
+	endif;
+
+	if (empty($wpmps_styles['hover_provincia_color'])):
+		$wpmps_styles['hover_provincia_color'] = '#265a82';
+	endif;
+
+	if (empty($wpmps_styles['has_link_provincia_color'])):
+		$wpmps_styles['has_link_provincia_color'] = '#989090';
+	endif;
+
+  return $wpmps_styles;
 }
