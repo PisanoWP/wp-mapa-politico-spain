@@ -74,6 +74,10 @@ Te recomiendo que eches un vistazo a [Plugin Mapa Comunidades](https://mispinito
 
 
 == Changelog ==
+= 3.7.2 =
+* Tested 5.9
+* [style] Establecer ID a los path de los paises
+
 = 3.7.1 =
 * [Fix] Compatibilad del shortcode con el editor del bloques
 
@@ -206,6 +210,6 @@ Te recomiendo que eches un vistazo a [Plugin Mapa Comunidades](https://mispinito
 
 
 == Upgrade Notice ==
-
-= 3.7.1 =
-* [Fix] Compatibilad del shortcode con el editor del bloques
+= 3.7.2 =
+* Tested 5.9
+* [style] Establecer ID a los path de los paises

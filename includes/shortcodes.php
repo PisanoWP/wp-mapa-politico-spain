@@ -39,6 +39,8 @@
 		foreach ($mapa['areas'] as $cod_area => $value){
 			$pagina_inicio = apply_filters('wpmps_establecer_links_provincias', $pagina_inicio, $cod_area, $value);
 		} ?>
+		<?php
+		$pagina_inicio = apply_filters('wpmps_establecer_link_paises', $pagina_inicio); ?>
 
 		<?php
 		$wpmps_styles = array();
@@ -132,7 +134,7 @@
 
 		<?php
 	  return ob_get_clean();
-		
+
 	}
 
 
