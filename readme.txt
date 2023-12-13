@@ -3,9 +3,9 @@ Contributors: jcglp
 Tags: wordpress, plugin, map, image, spain, svg
 Donate link: https://www.paypal.me/jcglp/1.5
 Requires at least: 4.6
-Tested up to: 5.8
+Tested up to: 6.4
 Requires PHP: 5.2.4
-Stable tag: 3.7.1
+Stable tag: 3.8.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -74,6 +74,11 @@ Te recomiendo que eches un vistazo a [Plugin Mapa Comunidades](https://mispinito
 
 
 == Changelog ==
+= 3.8.0 =
+* Tested 6.4.2
+* [feat] Si una provincia no tiene enlace NO refresca la página al pulsar
+* [feat] Añadir aria-label a las provincias
+
 = 3.7.2 =
 * Tested 5.9
 * [style] Establecer ID a los path de los paises
