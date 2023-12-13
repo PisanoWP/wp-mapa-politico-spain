@@ -107,6 +107,7 @@
    																		'id'=>array(),
 																			'class'=>array(),
 																			'preserveaspectratio'=>array(),
+																			'aria-label'=>array()
 																		),
 												'g' => array( 'class'=> array(),
 																	),
@@ -126,6 +127,7 @@
 																		,	 'target' => array()
 																		,	 'id'=>array()
 																		,	 'class'=>array()
+																		,	 'aria-label'=>array()
 																				),
 																	);
 				echo wp_kses( $pagina_inicio, $arr ); ?>
@@ -187,19 +189,20 @@ function wpmps_establecer_links_provincias($pagina_inicio, $cod_area, $value){
 
 	endif;
 
-	$pagina_inicio = str_replace('[href'.$cod_area.']', esc_url($value['href']) , $pagina_inicio);
-
 	if (empty($value['href']) || ('#'==$value['href'])):
+		// El área NO tiene enlace, le quito atributo para que no pulse y refresque la página
+		$pagina_inicio = str_replace('xlink:href="[href'.$cod_area.']"', false , $pagina_inicio);
 		$pagina_inicio = str_replace('[class'.$cod_area.']', ' ', $pagina_inicio);
+
 	else:
 		// El area tiene un enlace
+		$pagina_inicio = str_replace('[href'.$cod_area.']', esc_url($value['href']) , $pagina_inicio);
 		$pagina_inicio = str_replace('[class'.$cod_area.']', esc_attr($class_has_link), $pagina_inicio);
-
 
 	endif;
 
-	$pagina_inicio = str_replace('[target'.$cod_area.']', $value['target'], $pagina_inicio);
-	$pagina_inicio = str_replace('[title'.$cod_area.']', $value['title'], $pagina_inicio);
+	$pagina_inicio = str_replace('[target'.$cod_area.']', esc_attr($value['target']), $pagina_inicio);
+	$pagina_inicio = str_replace('[title'.$cod_area.']', esc_attr($value['title']), $pagina_inicio);
 
 	return $pagina_inicio;
 }
