@@ -1,11 +1,11 @@
 ===  WP Mapa Politico España ===
 Contributors: jcglp
-Tags: wordpress, plugin, map, image, spain, svg
+Tags: mapa, provincias, comunidades, españa
 Donate link: https://www.paypal.me/jcglp/1.5
 Requires at least: 4.6
-Tested up to: 6.4
+Tested up to: 6.8
 Requires PHP: 5.2.4
-Stable tag: 3.8.0
+Stable tag: 3.8.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -63,17 +63,22 @@ Si tienes dudas, preguntas o te da errores ponte en contacto conmigo, estaré en
 
 = ¿Existe una versión del mapa solo de comunidades?
 
-Te recomiendo que eches un vistazo a [Plugin Mapa Comunidades](https://mispinitoswp.wordpress.com/2020/04/29/mapa-por-comunidades/)
+Te recomiendo que eches un vistazo a [Plugin Mapa Comunidades](https://pisanowp.com/mapa-de-comunidades/)
 
 
 == Screenshots ==
 
 1.  Página del plugin para definir los hipervinculos sobre cada provincia
-2.  Configruación de colores
+2.  Configuración de colores
 3.  Mapa en una página
 
 
 == Changelog ==
+= 3.8.1 =
+* [fix] (CSRF) vulnerability en formulario enlaces provincias
+* Actualizar urls contacto
+
+
 = 3.8.0 =
 * Tested 6.4.2
 * [feat] Si una provincia no tiene enlace NO refresca la página al pulsar

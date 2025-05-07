@@ -18,4 +18,4 @@ Url del plugin en wordpress.org  [wp-mapa-politico-spain](https://wordpress.org/
 
 ## FAQ
 
-Si tienes dudas, preguntas o te da errores ponte en contacto conmigo, estaré encantado de ayudarte pisanowp@gmail.com
+Si tienes dudas, preguntas o te da errores ponte en contacto conmigo, estaré encantado de ayudarte pisano.wp@gmail.com

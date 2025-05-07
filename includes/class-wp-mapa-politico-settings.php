@@ -83,7 +83,7 @@ class WP_Mapa_Politico_Settings {
 		wp_enqueue_style( 'farbtastic' );
 		wp_enqueue_script( 'farbtastic' );
 
-		wp_register_script( $this->parent->_token . '-settings-js', $this->parent->assets_url . 'js/settings' . $this->parent->script_suffix . '.js', array( 'farbtastic', 'jquery' ), '1.5.0' );
+		wp_register_script( $this->parent->_token . '-settings-js', $this->parent->assets_url . 'js/settings' . $this->parent->script_suffix . '.js', array( 'farbtastic', 'jquery' ), WPMPS_VERSION, true );
 		wp_enqueue_script( $this->parent->_token . '-settings-js' );
 	}
 
@@ -253,14 +253,15 @@ class WP_Mapa_Politico_Settings {
 		if ( is_array( $this->settings ) ) {
 
 			// Check posted/selected tab
-			$current_section = '';
+			/*$current_section = '';
 			if ( isset( $_POST['tab'] ) && $_POST['tab'] ) {
 				$current_section = sanitize_key($_POST['tab']);
 			} else {
 				if ( isset( $_GET['tab'] ) && $_GET['tab'] ) {
 					$current_section = sanitize_key($_GET['tab']);
 				}
-			}
+			}*/
+			$current_section = empty( $_REQUEST['tab'] ) ? '' : sanitize_title( wp_unslash( $_REQUEST['tab'] ) ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 
 			foreach ( $this->settings as $section => $data ) {
 
@@ -312,10 +313,11 @@ class WP_Mapa_Politico_Settings {
 			<h2><?php esc_html_e( 'WP Mapa Politico España' , 'wp-mapa-politico-spain' ); ?></h2>
 
 		<?php
-		$tab = false;
+		/*$tab = false;
 		if ( isset( $_GET['tab'] ) && $_GET['tab'] ) {
 			$tab = sanitize_text_field($_GET['tab']);
-		}
+		}*/
+		$tab = empty( $_REQUEST['tab'] ) ? false : sanitize_title( wp_unslash( $_REQUEST['tab'] ) ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 
 		// Show page tabs
 		if ( is_array( $this->settings ) && 1 < count( $this->settings ) ) { ?>
@@ -340,7 +342,7 @@ class WP_Mapa_Politico_Settings {
 
 				// Set tab link
 				$tab_link = add_query_arg( array( 'tab' => $section ) );
-				if ( isset( $_GET['settings-updated'] ) ) {
+				if ( isset( $_GET['settings-updated'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 					$tab_link = remove_query_arg( 'settings-updated', $tab_link );
 				}
 
@@ -370,29 +372,35 @@ class WP_Mapa_Politico_Settings {
 
 			if (isset($_POST['Submit'])) {
 
-				$wpmps_mapas =  get_option( 'wpmps_plugin_mapas' );
+				if ( isset( $_REQUEST['_wpnonce'] ) && wp_verify_nonce( wp_unslash ( $_REQUEST['_wpnonce'] ), 'wpmps_settings-options' ) ) {
+		
+					$wpmps_mapas =  get_option( 'wpmps_plugin_mapas' );
 
-				foreach ($_POST as $key => $valor){
-					$v = explode( '-', sanitize_key($key));
-					if (4 == count($v) ) {
-						if ( isset( $wpmps_mapas[$v[0]][$v[1]][$v[2]][$v[3]] ) ){
-							if ('href'==$v[3]):
-								$valor = esc_url_raw($valor);
-							else:
-								$valor = sanitize_text_field($valor);
-							endif;
-							$wpmps_mapas[$v[0]][$v[1]][$v[2]][$v[3]] = $valor;
+					foreach ($_POST as $key => $valor){
+						$v = explode( '-', sanitize_key($key));
+						if (4 == count($v) ) {
+							if ( isset( $wpmps_mapas[$v[0]][$v[1]][$v[2]][$v[3]] ) ){
+								if ('href'==$v[3]):
+									$valor = esc_url_raw($valor);
+								else:
+									$valor = sanitize_text_field($valor);
+								endif;
+								$wpmps_mapas[$v[0]][$v[1]][$v[2]][$v[3]] = $valor;
+							}
 						}
 					}
+					update_option( 'wpmps_plugin_mapas', $wpmps_mapas ); ?>
+
+					<div id="setting-error-settings_updated" class="notice notice-success settings-error is-dismissible">
+						<p><strong><?php esc_html_e( 'Datos guardados correctamente' , 'wp-mapa-politico-spain' ); ?></strong></p><button type="button" class="notice-dismiss"><span class="screen-reader-text">Descartar este aviso.</span></button>
+					</div>
+
+				<?php 
+				} else {
+					die( __( 'Security check', 'wp-mapa-politico-spain' ) );
+					
 				}
-				update_option( 'wpmps_plugin_mapas', $wpmps_mapas ); ?>
-
-
-				<div id="setting-error-settings_updated" class="notice notice-success settings-error is-dismissible">
-					<p><strong><?php esc_html_e( 'Datos guardados correctamente' , 'wp-mapa-politico-spain' ); ?></strong></p><button type="button" class="notice-dismiss"><span class="screen-reader-text">Descartar este aviso.</span></button>
-				</div>
-
-			<?php
+			
 			}
 			// Formulario para capturar la informacion del mapa y guararlo como una única opcion ?>
 			<form method="post" enctype="multipart/form-data">

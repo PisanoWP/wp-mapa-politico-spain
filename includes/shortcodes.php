@@ -140,24 +140,30 @@
 	}
 
 
-function wpmps_getUrlContent($url){
-	$ua = 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US) AppleWebKit/525.13 (KHTML, like Gecko) Chrome/0.A.B.C Safari/525.13';
+function wpmps_getUrlContent( $url ) {
+	$response = wp_remote_get($url, [
+		'timeout' => 5,
+		'redirection' => 5,
+		'user-agent' => 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US) AppleWebKit/525.13 (KHTML, like Gecko) Chrome/0.A.B.C Safari/525.13',
+	]);
 
-	$ch = curl_init();
-	curl_setopt($ch, CURLOPT_URL, $url);
-	curl_setopt($ch, CURLOPT_USERAGENT, $ua);
-	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-	curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 5);
-	curl_setopt($ch, CURLOPT_TIMEOUT, 5);
-	$data = curl_exec($ch);
-	$httpcode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-	curl_close($ch);
-	$resultado = array('imagen'=>($httpcode>=200 && $httpcode<300) ? $data : false,
-										'httpcode'=>$httpcode);
+	if (is_wp_error($response)) {
+		return [
+			'imagen' => false,
+			'httpcode' => 0,
+			'error' => $response->get_error_message(),
+		];
+	}
 
-	return $resultado;
+	$http_code = wp_remote_retrieve_response_code($response);
+	$body = wp_remote_retrieve_body($response);
 
+	return [
+		'imagen' => ($http_code >= 200 && $http_code < 300) ? $body : false,
+		'httpcode' => $http_code,
+	];
 }
+
 
 function wpmps_getFileContent($url){
 	try {
